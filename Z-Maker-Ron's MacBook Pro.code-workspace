@@ -1,0 +1,90 @@
+{
+  "folders": [
+    {
+      "path": "."
+    },
+    {
+      "path": "../Website-Normal-Base"
+    }
+  ],
+  "settings": {
+    "todohighlight.defaultStyle": {},
+    "todohighlight.exclude": ["**/node_modules/**", "**/bower_components/**", "**/dist/**", "**/build/**", "**/.vscode/**", "**/.github/**", "**/_output/**", "**/*.min.*", "**/*.map", "**/.next/**"],
+    "todohighlight.include": ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx", "**/*.html", "**/*.php", "**/*.css", "**/*.scss"],
+    "todohighlight.keywords": [
+      {
+        "text": "//-",
+        "color": "#fff",
+        "backgroundColor": "#e206ff"
+      },
+      {
+        "text": "<!---->",
+        "color": "#fff",
+        "backgroundColor": "#e206ff"
+      },
+      {
+        "text": "//+",
+        "color": "#e74c3c",
+        "backgroundColor": "#e74c3c"
+      },
+      // {
+      //   "text": "console.log",
+      //   "color": "#e206ff",
+      //   "backgroundColor": "#272528"
+      // },
+
+      {
+        "text": "//[Main Nav Bar]",
+        "color": "#fff",
+        "backgroundColor": "#e74c3c"
+      },
+      {
+        "text": "//[Mobile Nav Bar]",
+        "color": "#fff",
+        "backgroundColor": "#e74c3c"
+      },
+      {
+        "text": "// ]",
+        "color": "#fff",
+        "backgroundColor": "#e74c3c"
+      },
+      {
+        "text": "// ]",
+        "color": "#fff",
+        "backgroundColor": "#e74c3c"
+      },
+      {
+        "text": "// ]",
+        "color": "#fff",
+        "backgroundColor": "#e74c3c"
+      },
+      {
+        "text": "// ]",
+        "color": "#fff",
+        "backgroundColor": "#e74c3c"
+      }
+    ],
+    "prettier.printWidth": 250,
+    "prettier.bracketSameLine": true,
+    "prettier.proseWrap": "never",
+    "prettier.singleQuote": true,
+    "liveServer.settings.multiRootWorkspaceName": "myNavbar-collection"
+  }
+}
+
+/*
+
+{
+  "text": "// ]",
+  "color": "#fff",
+  "backgroundColor": "#e74c3c"
+},
+
+
+"folders": [
+  {
+    "path": "."
+  }
+],
+
+*/

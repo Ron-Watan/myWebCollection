@@ -1,0 +1,14 @@
+{
+  "name": "mynavbar-collection",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "start": "node-sass  project_02/sass/main.scss project_02/css/style.css -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^8.0.0"
+  }
+}

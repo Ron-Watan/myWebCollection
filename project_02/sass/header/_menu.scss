@@ -1,0 +1,46 @@
+.menuPopup--wrapper {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  background-color: #ffffff;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s;
+}
+
+.menuPopup-container {
+  display: flex;
+  max-width: 123rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 5rem 2rem;
+}
+
+.menuPopup {
+  &-module {
+    display: flex;
+    flex-direction: column;
+    padding-right: 5rem;
+  }
+  &-title {
+    display: flex;
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 2;
+    margin-bottom: 2rem;
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+  }
+  &__link {
+    line-height: 1.8;
+  }
+}
+
+
+.visible {
+  opacity: 1;
+  visibility: visible;
+}

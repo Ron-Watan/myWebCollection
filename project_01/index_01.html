@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="img/R-blue-icon.png" type="image/fav-icon">
+  <script src="js/script_01.js" defer></script>
+  <link rel="stylesheet" href="css/style.css">
+
+  <title>myNav-Collection</title>
+</head>
+
+<body>
+  <header class="header"> <!-- Header Section : display flex,align center, bg, position fix-->
+    <div class="container__large"> <!-- container main and mobile nav :padding-->
+      <!-- //[Main Nav Bar] -->
+      <div class="main-bar"><!-- width: 100%; display: flex; align-items: center; gap: 2rem; justify-content: space-between; -->
+        <a href="#"><img src="img/R-blue-logo.png" alt="logo" class="logo"></a>
+        <nav class="main-nav">
+          <div class="main-nav__list">
+            <!-- Prouct -->
+            <div class="menu-module">
+              <button class="menu-module__btn">Product</button>
+              <div class="menu-module-control ">
+                <div class="menu-module--arrow"></div>
+                <div class="menu-module-container">
+                  <p class="menu-module-title">Product</p>
+                  <!-- <div class="menu-module__list">
+                    <a href="#" class="link menu-module__link">What is Developer Observability?</a>
+                    <a href="#" class="link menu-module__link">Why Lightrun?</a>
+                    <a href="#" class="link menu-module__link">Lightrun Architecture</a>
+                    <a href="#" class="link menu-module__link"><span>The Lightrun SDK</span><sup>TM</sup></a>
+                    <a href="#" class="link menu-module__link">The Lightrun IDE Plugin</a>
+                    <a href="#" class="link menu-module__link">Security</a>
+                    <a href="#" class="link menu-module__link">Comparisons</a>
+                    <a href="#" class="link menu-module__link">Integrations</a>
+                  </div> -->
+                </div>
+              </div>
+            </div>
+            <!-- Pricing -->
+            <div class="menu-module">
+              <button class="menu-module__btn">Pricing</button>
+              <div class="menu-module-control ">
+                <div class="menu-module--arrow"></div>
+                <div class="menu-module-container">
+                  <p class="menu-module-title">Pricing</p>
+                  <!--Menu List-->
+                </div>
+              </div>
+            </div>
+            <!-- Docs -->
+            <div class="menu-module">
+              <button class="menu-module__btn">Docs</button>
+              <div class="menu-module-control ">
+                <div class="menu-module--arrow"></div>
+                <div class="menu-module-container">
+                  <p class="menu-module-title">Docs</p>
+                  <!--Menu List-->
+                </div>
+              </div>
+            </div>
+            <!-- Resource -->
+            <div class="menu-module">
+              <button class="menu-module__btn">Resource</button>
+              <div class="menu-module-control ">
+                <div class="menu-module--arrow"></div>
+                <div class="menu-module-container">
+                  <p class="menu-module-title">Resource</p>
+                  <!--Menu List-->
+                </div>
+              </div>
+            </div>
+
+            <!-- Company -->
+            <div class="menu-module">
+              <button class="menu-module__btn">Company</button>
+              <div class="menu-module-control ">
+                <div class="menu-module--arrow"></div>
+                <div class="menu-module-container">
+                  <p class="menu-module-title">Company</p>
+                  <!--Menu List-->
+                </div>
+              </div>
+            </div>
+          </div>
+          <ul class="control-btn">
+            <li class='control-btn__list'><a href="#" class="link main-nav__link btn-login">Log in</a></li>
+            <li class='control-btn__list'><a href="#" class="control-btn__btn btn-blue-tranparent">Book a Demo</a></li>
+            <li class='control-btn__list'><a href="#" class="control-btn__btn btn-blue">Start for Free</a></li>
+          </ul>
+        </nav>
+        <!--  -->
+        <button class="mobile-burger-icon" title="Navigation">
+          <span class="mobile-burger-line"></span>
+          <span class="mobile-burger-line"></span>
+          <span class="mobile-burger-line"></span>
+        </button>
+        <!--  -->
+      </div>
+
+      <!-- //[Mobile Nav Bar] -->
+      <div class="mobile-bar"> <!-- Position start, container ,backgroung color -->
+        <div class="mobile-bar--scroll-kit"><!-- overflow scrool kit-->
+          <div class="mobile-bar-container"> <!-- contaianer-->
+            <ul class="mobile-bar--lists"> <!-- display flex, column, padding -->
+              <li class="mobile-bar--list"> <!-- Just border bottom -->
+                <p class="mobile-bar--list-title"><span>Dev Observability</span><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAxMiAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTcuOTczNzNlLTA3IDE4LjIxMjFMMS44MjAwNSAyMEwxMiAxMEwxLjgyMDA1IDguODk5NTllLTA3TC02LjM4NDhlLTA3IDEuNzg3ODhMOC4zNTk5IDEwTDcuOTczNzNlLTA3IDE4LjIxMjFaIiBmaWxsPSJ1cmwoI3BhaW50MF9saW5lYXJfNTE2XzEyNjApIi8+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9InBhaW50MF9saW5lYXJfNTE2XzEyNjAiIHgxPSIxMiIgeTE9IjEwIiB4Mj0iLTIuMDcxMyIgeTI9IjguMjYzMDMiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KPHN0b3Agc3RvcC1jb2xvcj0iIzI4QTFDMCIvPgo8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMxNjQ4OUMiLz4KPC9saW5lYXJHcmFkaWVudD4KPC9kZWZzPgo8L3N2Zz4K" alt="arrow" class="mobile-bar--arrow " /></p>
+                <!--Menu List-->
+              </li>
+              <li class="mobile-bar--list">
+                <p class="mobile-bar--list-title"><span>Product</span><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAxMiAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTcuOTczNzNlLTA3IDE4LjIxMjFMMS44MjAwNSAyMEwxMiAxMEwxLjgyMDA1IDguODk5NTllLTA3TC02LjM4NDhlLTA3IDEuNzg3ODhMOC4zNTk5IDEwTDcuOTczNzNlLTA3IDE4LjIxMjFaIiBmaWxsPSJ1cmwoI3BhaW50MF9saW5lYXJfNTE2XzEyNjApIi8+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9InBhaW50MF9saW5lYXJfNTE2XzEyNjAiIHgxPSIxMiIgeTE9IjEwIiB4Mj0iLTIuMDcxMyIgeTI9IjguMjYzMDMiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KPHN0b3Agc3RvcC1jb2xvcj0iIzI4QTFDMCIvPgo8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMxNjQ4OUMiLz4KPC9saW5lYXJHcmFkaWVudD4KPC9kZWZzPgo8L3N2Zz4K" alt="arrow" class="mobile-bar--arrow " /></p>
+                <!--Menu List-->
+              </li>
+              <li class="mobile-bar--list"><a href="" class="mobile-bar--list-link ">Pricing</a>
+                <!--Menu List-->
+              </li>
+
+              <li class="mobile-bar--list"><a href="" class="mobile-bar--list-link ">Docs</a>
+                <!--Menu List-->
+              </li>
+
+              <li class="mobile-bar--list">
+                <p class="mobile-bar--list-title"><span>Resources</span><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAxMiAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTcuOTczNzNlLTA3IDE4LjIxMjFMMS44MjAwNSAyMEwxMiAxMEwxLjgyMDA1IDguODk5NTllLTA3TC02LjM4NDhlLTA3IDEuNzg3ODhMOC4zNTk5IDEwTDcuOTczNzNlLTA3IDE4LjIxMjFaIiBmaWxsPSJ1cmwoI3BhaW50MF9saW5lYXJfNTE2XzEyNjApIi8+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9InBhaW50MF9saW5lYXJfNTE2XzEyNjAiIHgxPSIxMiIgeTE9IjEwIiB4Mj0iLTIuMDcxMyIgeTI9IjguMjYzMDMiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KPHN0b3Agc3RvcC1jb2xvcj0iIzI4QTFDMCIvPgo8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMxNjQ4OUMiLz4KPC9saW5lYXJHcmFkaWVudD4KPC9kZWZzPgo8L3N2Zz4K" alt="arrow" class="mobile-bar--arrow " /></p>
+                <!--Menu List-->
+              </li>
+              <li class="mobile-bar--list"><a href="" class="mobile-bar--list-link ">Blog</a>
+                <!--Menu List-->
+              </li>
+              <li class="mobile-bar--list">
+                <p class="mobile-bar--list-title"><span>Company</span><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAxMiAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTcuOTczNzNlLTA3IDE4LjIxMjFMMS44MjAwNSAyMEwxMiAxMEwxLjgyMDA1IDguODk5NTllLTA3TC02LjM4NDhlLTA3IDEuNzg3ODhMOC4zNTk5IDEwTDcuOTczNzNlLTA3IDE4LjIxMjFaIiBmaWxsPSJ1cmwoI3BhaW50MF9saW5lYXJfNTE2XzEyNjApIi8+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9InBhaW50MF9saW5lYXJfNTE2XzEyNjAiIHgxPSIxMiIgeTE9IjEwIiB4Mj0iLTIuMDcxMyIgeTI9IjguMjYzMDMiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KPHN0b3Agc3RvcC1jb2xvcj0iIzI4QTFDMCIvPgo8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMxNjQ4OUMiLz4KPC9saW5lYXJHcmFkaWVudD4KPC9kZWZzPgo8L3N2Zz4K" alt="arrow" class="mobile-bar--arrow " /></p>
+                <!--Menu List-->
+              </li>
+              <li class="mobile-bar--list"><a href="" class="mobile-bar--list-link ">Debug Wordle</a>
+                <!--Menu List-->
+              </li>
+            </ul>
+            <div class="mobile-control-btn"><!-- margin top  -->
+              <ul class="mobile-control-btn__linklist">
+                <li class="ControlButtons-module--underLine--a2f91"><a href="">Log in</a></li>
+                <li class="ControlButtons-module--item--da1af"><a href="" class="ButtonLink-module--linkBtn--3a273 ButtonLink-module--transparent--5a2f9 ">Book a Demo</a></li>
+                <li class="ControlButtons-module--item--da1af"><a href="" class="ButtonLink-module--linkBtn--3a273 ButtonLink-module--fill--6b8b9 ">Start For Free</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="hero-container__large">
+        <div class="hero-module--overlay">
+          <img src="img/question-mark.png" alt="question-mark" class="hero-module--img" />
+          <div class="hero-module--wrapper">
+            <h1>Stuck on an issue?</h1>
+            <p class="hero-module--description ">Lightrun Answers was designed to reduce the constant googling that comes with debugging 3rd party libraries. It collects links to all the places you might be looking at while hunting down a tough bug.<br /></p>
+            <p class="hero-module--description  hero-module--strongText">And, if you’re still stuck at the end, we’re happy to hop on a call to see how we can help out.</p>
+            <button class="hero-module--btn">Talk to a Lightrun Answers expert</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+
+
+
+
+
+</body>
+
+</html>

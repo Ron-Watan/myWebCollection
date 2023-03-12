@@ -1,0 +1,176 @@
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
+  font-size: 1.6rem;
+  font-weight: 300;
+  height: 100%;
+  color: #333; }
+
+h1 {
+  font-size: 4rem; }
+
+li,
+ul {
+  list-style: none;
+  display: inline-block; }
+
+a,
+a:link,
+a:visited {
+  text-decoration: none;
+  cursor: pointer;
+  align-items: center;
+  flex-wrap: nowrap; }
+
+button,
+.btn {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  display: inline-block;
+  white-space: nowrap; }
+
+.flexGrow--1 {
+  flex-grow: 1; }
+
+.hidden {
+  display: none; }
+
+.header {
+  width: 100%;
+  height: 95vh;
+  position: fixed;
+  background-image: url("https://f.hubspotusercontent10.net/hubfs/4542168/stx-next-nodejs-development-photo-2.png");
+  background-size: cover;
+  background-position: center; }
+
+.headerInner {
+  position: relative;
+  background-color: #00000082; }
+
+.container--large {
+  max-width: 123rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1.7rem 0 1.5rem; }
+
+.logo {
+  display: block;
+  width: 12rem; }
+
+.main-navigation {
+  display: flex;
+  align-items: center;
+  gap: 1%; }
+
+.center-navigation {
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+  align-self: stretch; }
+
+.menu {
+  display: flex; }
+  .menu__list {
+    display: flex;
+    padding: 0 2rem; }
+  .menu__link {
+    color: #fff;
+    position: relative;
+    display: flex;
+    align-self: stretch;
+    font-weight: 700;
+    padding: 4rem 0; }
+    .menu__link:hover {
+      color: #33cac0; }
+    .menu__link::after {
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      transform: rotateY(90deg);
+      content: '';
+      height: 3px;
+      background-color: #33cac0;
+      transition: all 0.3s ease; }
+
+.menu__list:hover .menu__link::after {
+  transform: rotateY(0deg); }
+
+.rightSideHeader {
+  display: flex;
+  align-items: center;
+  gap: 2rem; }
+
+.searchIcon {
+  display: block;
+  width: 2rem; }
+
+.btn--link {
+  color: #fff;
+  font-weight: 700;
+  padding: 1.5rem 2.5rem;
+  border-radius: 4rem; }
+
+.fill--green {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), linear-gradient(69deg, #09b3bf, #5fe3c2); }
+
+.mobile-nav {
+  display: none; }
+
+.burgurIcon {
+  display: none; }
+
+.menuPopup--wrapper {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  background-color: #ffffff;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s; }
+
+.menuPopup-container {
+  display: flex;
+  max-width: 123rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 5rem 2rem; }
+
+.menuPopup-module {
+  display: flex;
+  flex-direction: column;
+  padding-right: 5rem; }
+
+.menuPopup-title {
+  display: flex;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 2;
+  margin-bottom: 2rem; }
+
+.menuPopup__list {
+  display: flex;
+  flex-direction: column; }
+
+.menuPopup__link {
+  line-height: 1.8; }
+
+.visible {
+  opacity: 1;
+  visibility: visible; }
+
+.arrow {
+  width: 2rem;
+  height: 2rem;
+  background: #e51111; }

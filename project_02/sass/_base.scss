@@ -1,0 +1,53 @@
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
+  font-size: 1.6rem;
+  font-weight: 300;
+  height: 100%;
+  color: #333;
+}
+h1 {
+  font-size: 4rem;
+}
+li,
+ul {
+  list-style: none;
+  display: inline-block;
+}
+a,
+a:link,
+a:visited {
+  text-decoration: none;
+  cursor: pointer;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+button,
+.btn {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  display: inline-block;
+  white-space: nowrap;
+}
+//////////////////////
+.flexGrow--1 {
+  flex-grow: 1;
+}
+
+.hidden {
+  display: none;
+}
