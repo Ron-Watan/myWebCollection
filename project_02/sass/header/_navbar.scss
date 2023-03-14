@@ -1,20 +1,13 @@
 .header {
   width: 100%;
-  height: 95vh;
+  background-color: #00000082;
   position: fixed;
-  background-image: url('https://f.hubspotusercontent10.net/hubfs/4542168/stx-next-nodejs-development-photo-2.png');
-  background-size: cover;
-  background-position: center;
+}
+.header.secondColor {
+  background-color: #1e1e1e;
 }
 .headerInner {
   position: relative;
-  background-color: #00000082;
-}
-.container--large {
-  max-width: 123rem;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 1.7rem 0 1.5rem;
 }
 .logo {
   display: block;
@@ -81,15 +74,6 @@
   width: 2rem;
 }
 
-.btn--link {
-  color: #fff;
-  font-weight: 700;
-  padding: 1.5rem 2.5rem;
-  border-radius: 4rem;
-}
-.fill--green {
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), linear-gradient(69deg, #09b3bf, #5fe3c2);
-}
 
 /////////////
 .mobile-nav {

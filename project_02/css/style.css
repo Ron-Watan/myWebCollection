@@ -12,12 +12,12 @@ body {
   font-family: 'Montserrat', sans-serif;
   box-sizing: border-box;
   font-size: 1.6rem;
-  font-weight: 300;
+  font-weight: 400;
   height: 100%;
   color: #333; }
 
 h1 {
-  font-size: 4rem; }
+  font-size: 6rem; }
 
 li,
 ul {
@@ -30,15 +30,42 @@ a:visited {
   text-decoration: none;
   cursor: pointer;
   align-items: center;
-  flex-wrap: nowrap; }
+  flex-wrap: nowrap;
+  white-space: nowrap; }
 
-button,
-.btn {
+button {
   background: transparent;
   border: 0;
   cursor: pointer;
   display: inline-block;
   white-space: nowrap; }
+
+.margin-bt-lgest {
+  margin-bottom: 10rem; }
+
+.margin-bt-lg {
+  margin-bottom: 8rem; }
+
+.margin-bt-md {
+  margin-bottom: 6rem; }
+
+.margin-bt-smll {
+  margin-bottom: 4rem; }
+
+.margin-bt-smllest {
+  margin-bottom: 2rem; }
+
+.btn__link {
+  color: #fff;
+  font-weight: 500;
+  padding: 1.5rem 2.5rem;
+  border-radius: 4rem; }
+
+.fill--green {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), linear-gradient(69deg, #09b3bf, #5fe3c2); }
+
+.border--green {
+  border: #5fe3c2 2px solid; }
 
 .flexGrow--1 {
   flex-grow: 1; }
@@ -46,23 +73,112 @@ button,
 .hidden {
   display: none; }
 
-.header {
+.empty {
+  width: 100%;
+  height: 100vh;
+  background-color: #c8e0ec; }
+
+.hero {
+  width: 100%;
+  height: 42em; }
+
+.trigger {
+  display: block; }
+
+.heroWrapper {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.902), rgba(0, 0, 0, 0.235)), url("https://f.hubspotusercontent10.net/hubfs/4542168/stx-next-nodejs-development-photo-2.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  padding: 5rem 2rem; }
+
+.main {
   width: 100%;
   height: 95vh;
-  position: fixed;
-  background-image: url("https://f.hubspotusercontent10.net/hubfs/4542168/stx-next-nodejs-development-photo-2.png");
-  background-size: cover;
-  background-position: center; }
+  background-color: #fff; }
+
+.lightboxOverlay {
+  background-color: #000;
+  filter: alpha(Opacity=80);
+  left: 0;
+  opacity: 0.1;
+  position: absolute;
+  top: 0; }
+
+.heroContainer {
+  max-width: 123rem;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  padding: 17rem 1.7rem 15rem; }
+
+.heroModule {
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  color: #fff; }
+
+.heroBtnControl {
+  display: flex;
+  gap: 2rem;
+  align-items: center; }
+
+.paragraph--large {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.8; }
+
+.paragraph--normal {
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.6; }
+
+.heroModule-dev {
+  display: flex;
+  gap: 2rem;
+  align-items: center; }
+  .heroModule-dev__img {
+    width: 5rem;
+    border-radius: 50%; }
+  .heroModule-dev__namePosition {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem; }
+    .heroModule-dev__namePosition span:first-child {
+      font-size: 1.4rem;
+      text-transform: uppercase;
+      color: #33cac0;
+      font-weight: 600; }
+    .heroModule-dev__namePosition span:nth-child(2) {
+      font-size: 1.3rem;
+      font-weight: 500; }
+
+.bar {
+  padding: 10rem 6rem 0; }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(4rem); }
+  100% {
+    opacity: 1;
+    transform: none; } }
+
+.fade-in {
+  animation: fadeIn 1s 1 ease; }
+
+.header {
+  width: 100%;
+  background-color: #00000082;
+  position: fixed; }
+
+.header.secondColor {
+  background-color: #1e1e1e; }
 
 .headerInner {
-  position: relative;
-  background-color: #00000082; }
-
-.container--large {
-  max-width: 123rem;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 1.7rem 0 1.5rem; }
+  position: relative; }
 
 .logo {
   display: block;
@@ -115,15 +231,6 @@ button,
   display: block;
   width: 2rem; }
 
-.btn--link {
-  color: #fff;
-  font-weight: 700;
-  padding: 1.5rem 2.5rem;
-  border-radius: 4rem; }
-
-.fill--green {
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), linear-gradient(69deg, #09b3bf, #5fe3c2); }
-
 .mobile-nav {
   display: none; }
 
@@ -166,11 +273,6 @@ button,
 .menuPopup__link {
   line-height: 1.8; }
 
-.visible {
+.visible9999 {
   opacity: 1;
   visibility: visible; }
-
-.arrow {
-  width: 2rem;
-  height: 2rem;
-  background: #e51111; }

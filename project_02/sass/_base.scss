@@ -14,12 +14,12 @@ body {
   font-family: 'Montserrat', sans-serif;
   box-sizing: border-box;
   font-size: 1.6rem;
-  font-weight: 300;
+  font-weight: 400;
   height: 100%;
   color: #333;
 }
 h1 {
-  font-size: 4rem;
+  font-size: 6rem;
 }
 li,
 ul {
@@ -33,10 +33,10 @@ a:visited {
   cursor: pointer;
   align-items: center;
   flex-wrap: nowrap;
+  white-space: nowrap;
 }
 
-button,
-.btn {
+button {
   background: transparent;
   border: 0;
   cursor: pointer;
@@ -44,10 +44,3 @@ button,
   white-space: nowrap;
 }
 //////////////////////
-.flexGrow--1 {
-  flex-grow: 1;
-}
-
-.hidden {
-  display: none;
-}

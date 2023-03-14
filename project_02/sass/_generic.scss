@@ -1,0 +1,61 @@
+//////////////////////
+.margin-bt-lgest {
+  margin-bottom: 10rem;
+}
+.margin-bt-lg {
+  margin-bottom: 8rem;
+}
+.margin-bt-md {
+  margin-bottom: 6rem;
+}
+.margin-bt-smll {
+  margin-bottom: 4rem;
+}
+.margin-bt-smllest {
+  margin-bottom: 2rem;
+}
+
+///////////////////////////////
+
+.btn__link {
+  color: #fff;
+  font-weight: 500;
+  padding: 1.5rem 2.5rem;
+  border-radius: 4rem;
+}
+.fill--green {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), linear-gradient(69deg, #09b3bf, #5fe3c2);
+}
+.border--green {
+  border: #5fe3c2 2px solid;
+}
+
+////////////////////////////////
+
+.flexGrow--1 {
+  flex-grow: 1;
+}
+
+.hidden {
+  display: none;
+}
+
+//////////////////////
+
+.container--large {
+  max-width: 123rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1.7rem 0 1.5rem;
+}
+
+
+
+
+.empty {
+  width: 100%;
+  height: 100vh;
+  background-color: #c8e0ec;
+}
+
+//////////////////////
