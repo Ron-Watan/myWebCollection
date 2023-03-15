@@ -1,25 +1,63 @@
 //////////////////////
-.margin-bt-lgest {
-  margin-bottom: 10rem;
+.font-s-20 {
+  font-size: 2rem;
 }
-.margin-bt-lg {
-  margin-bottom: 8rem;
+.font-s-18 {
+  font-size: 1.8rem;
 }
-.margin-bt-md {
-  margin-bottom: 6rem;
+.font-s-17 {
+  font-size: 1.7rem;
 }
-.margin-bt-smll {
-  margin-bottom: 4rem;
+.font-s-16 {
+  font-size: 1.6rem;
 }
-.margin-bt-smllest {
-  margin-bottom: 2rem;
+.font-s-14 {
+  font-size: 1.4rem;
+}
+.font-s-12 {
+  font-size: 1.2rem;
+}
+//////////////////////
+.font-w-7 {
+  font-weight: 700;
+}
+.font-w-6 {
+  font-weight: 600;
+}
+.font-w-5 {
+  font-weight: 500;
+}
+.font-w-4 {
+  font-weight: 400;
+}
+.font-w-3 {
+  font-weight: 300;
 }
 
+//////////////////////
+.margin-bt-10 {
+  margin-bottom: 10rem;
+}
+.margin-bt-8 {
+  margin-bottom: 8rem;
+}
+.margin-bt-6 {
+  margin-bottom: 6rem;
+}
+.margin-bt-4 {
+  margin-bottom: 4rem;
+}
+.margin-bt-2 {
+  margin-bottom: 2rem;
+}
 ///////////////////////////////
 
 .btn__link {
   color: #fff;
-  font-weight: 500;
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1.1;
+  text-transform: uppercase;
   padding: 1.5rem 2.5rem;
   border-radius: 4rem;
 }
@@ -28,6 +66,7 @@
 }
 .border--green {
   border: #5fe3c2 2px solid;
+  color: #5fe3c2;
 }
 
 ////////////////////////////////
@@ -48,9 +87,6 @@
   margin: 0 auto;
   padding: 0 1.7rem 0 1.5rem;
 }
-
-
-
 
 .empty {
   width: 100%;
