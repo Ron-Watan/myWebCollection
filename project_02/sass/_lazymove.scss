@@ -1,0 +1,61 @@
+.lazyContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.temp {
+  display: flex;
+  opacity: 1;
+  width: 40000px;
+  transform: translateX(106.8rem);
+
+  transition: transform 10000ms linear 0s;
+}
+.cBoxColMainS {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  white-space: nowrap;
+  //
+
+  // transform: translate3d(-1068px, 0px, 0px);
+  // transform: translateX(106.8rem);
+
+  // transition: transform 10000ms linear 0s;
+
+  .cBoxCol1 {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 0.5rem;
+    font-size: 1.2rem;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    border: 1px solid #333;
+
+    // flex-wrap: nowrap;
+  }
+  .cBoxCol1Innr {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    span {
+      display: inline-block;
+    }
+  }
+}
+
+@keyframes lazyMove {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-30rem);
+  }
+}
+
+.test1 {
+  animation: lazyMove 15s 1 linear;
+}

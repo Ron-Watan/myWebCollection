@@ -60,6 +60,12 @@ button {
 .font-s-12 {
   font-size: 1.2rem; }
 
+.font-s-10 {
+  font-size: 1rem; }
+
+.font-s-8 {
+  font-size: 0.8rem; }
+
 .font-w-7 {
   font-weight: 700; }
 
@@ -74,6 +80,12 @@ button {
 
 .font-w-3 {
   font-weight: 300; }
+
+.margin-bt-14 {
+  margin-bottom: 14rem; }
+
+.margin-bt-12 {
+  margin-bottom: 12rem; }
 
 .margin-bt-10 {
   margin-bottom: 10rem; }
@@ -214,9 +226,51 @@ button {
 .fade-in {
   animation: fadeIn 1s 1 ease; }
 
+.trustSection {
+  background-color: #f5f8fa;
+  padding: 15rem 0; }
+  .trustSection .trustContainer {
+    display: flex; }
+  .trustSection__left {
+    width: 50%; }
+  .trustSection__right {
+    width: 50%;
+    padding: 5rem 17rem 5rem 5rem; }
+
+.partnerContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%; }
+
+.partnerContainer__slide {
+  width: 100%;
+  border-bottom: 1px solid #cdcbcb; }
+
+.partnerContainer__title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #868686;
+  padding-top: 2.2rem;
+  padding-bottom: 2.2rem;
+  position: relative; }
+
+.containerInner {
+  transition: all 1s;
+  overflow: hidden;
+  display: flex;
+  height: 0; }
+
+.containerInnerP {
+  padding-bottom: 3rem; }
+
+.partnerContainer__paragraph {
+  font-size: 1.6rem;
+  font-weight: 400;
+  height: 100%; }
+
 .developmentSection {
   background-color: #f5f8fa;
-  padding: 12rem 0; }
+  padding: 15rem 0; }
 
 .chooseTitle {
   display: flex;
@@ -275,7 +329,8 @@ button {
 
 .largestPython {
   display: flex;
-  align-items: center; }
+  align-items: center;
+  margin-bottom: 20rem; }
   .largestPython__left {
     width: 50%;
     padding-left: 17rem;
@@ -284,10 +339,81 @@ button {
     width: 50%;
     display: flex;
     justify-content: end;
-    align-self: start; }
+    align-self: start;
+    position: relative; }
   .largestPython--img {
     display: block;
     width: 80%; }
+
+.layerInner {
+  position: absolute;
+  content: '';
+  left: 0;
+  bottom: 0;
+  transform: translateY(80%);
+  width: 75%;
+  background-color: #fff;
+  padding: 3rem 5rem 6rem;
+  border-radius: 0.4rem;
+  box-shadow: 0 0.2rem 4rem rgba(0, 0, 0, 0.276); }
+  .layerInner__head {
+    display: flex;
+    align-items: center;
+    gap: 2rem; }
+  .layerInner--no1 {
+    font-size: 6rem;
+    font-weight: 700;
+    display: inline-block;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-image: linear-gradient(60deg, #09b3bf, #5fe3c2); }
+  .layerInner .review {
+    display: flex;
+    align-items: center;
+    gap: 1rem; }
+    .layerInner .review__left {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 1rem;
+      line-height: 1;
+      font-size: 1.4rem;
+      font-weight: 500; }
+      .layerInner .review__left img {
+        width: 10rem;
+        display: inline-block;
+        align-self: center; }
+    .layerInner .review__right {
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      gap: 1rem;
+      line-height: 1;
+      align-items: center; }
+    .layerInner .review__stars {
+      display: flex;
+      align-items: center;
+      gap: 0.2; }
+      .layerInner .review__stars--fulled {
+        display: inline-block;
+        width: 1.8rem;
+        fill: #ff3d2e; }
+    .layerInner .review--count {
+      font-size: 1.4rem; }
+
+.serviceProvide {
+  display: flex; }
+  .serviceProvide__left {
+    width: 40%;
+    padding-bottom: 15rem; }
+    .serviceProvide__left img {
+      width: 100%;
+      display: inline-block;
+      transform: scale(1.5);
+      transform-origin: top right; }
+  .serviceProvide__right {
+    width: 60%;
+    padding: 5rem 17rem 0 5rem; }
 
 .header {
   width: 100%;
@@ -397,3 +523,47 @@ button {
 .visible9999 {
   opacity: 1;
   visibility: visible; }
+
+.lazyContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem; }
+
+.temp {
+  display: flex;
+  opacity: 1;
+  width: 40000px;
+  transform: translateX(106.8rem);
+  transition: transform 10000ms linear 0s; }
+
+.cBoxColMainS {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  white-space: nowrap; }
+  .cBoxColMainS .cBoxCol1 {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 0.5rem;
+    font-size: 1.2rem;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    border: 1px solid #333; }
+  .cBoxColMainS .cBoxCol1Innr {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem; }
+    .cBoxColMainS .cBoxCol1Innr span {
+      display: inline-block; }
+
+@keyframes lazyMove {
+  0% {
+    transform: translateX(0); }
+  100% {
+    transform: translateX(-30rem); } }
+
+.test1 {
+  animation: lazyMove 15s 1 linear; }

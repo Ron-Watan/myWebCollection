@@ -5,6 +5,7 @@
   "main": "script.js",
   "scripts": {
     "start": "node-sass  project_02/sass/main.scss project_02/css/style.css -w"
+
   },
   "author": "",
   "license": "ISC",
