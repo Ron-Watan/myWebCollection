@@ -1,0 +1,131 @@
+.wwwSection {
+  background-color: #f5f8fa;
+}
+
+.www__title {
+  position: relative;
+  margin-bottom: 12rem;
+  h1 {
+    position: relative;
+    z-index: 1;
+    display: inline;
+    background-color: #fff;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0.5rem;
+    width: 100%;
+    height: 0.1rem;
+    background: #000;
+  }
+}
+
+.whyWorkModule {
+  padding: 5rem 0 5rem;
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 3rem;
+    row-gap: 5rem;
+  }
+  &__box {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    width: 100%;
+    border-bottom: 1px solid #e4e2e2;
+    padding-bottom: 3rem;
+    h3 {
+      font-size: 3rem;
+    }
+    p {
+      font-size: 1.4rem;
+      font-weight: 500;
+    }
+  }
+}
+
+//////////////////////////////////
+
+.whatClntModule {
+  padding: 5rem 0 5rem;
+  &__overview {
+    padding-left: 17rem;
+    display: flex;
+  }
+  &__content {
+    width: 28%;
+  }
+
+  &__slideList {
+    width: 72%;
+    display: inline-block;
+    overflow: hidden;
+  }
+}
+
+.slideTrack {
+  width: 350rem;
+  // transform: translateX(0);
+  // animation: slideTrack infinite 15s;
+}
+.slideItem {
+  display: inline-block;
+  width: 40rem;
+  margin-right: 3rem;
+  height: 74rem;
+  background-color: #fff;
+  padding: 1rem 3rem;
+  border-radius: 0.5rem;
+  border: 1px solid #e4e2e2;
+
+  &__featuredIn {
+    width: 100%;
+    height: 6.3rem;
+    display: flex;
+    justify-content: center;
+    span {
+      display: inline-block;
+      font-size: 1rem;
+      font-weight: 500;
+      color: #838282;
+    }
+    img {
+      height: 1rem;
+    }
+  }
+  &__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 14.5rem;
+    img {
+      height: 5rem;
+    }
+  }
+  &__quotIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__content {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    height: 35.6rem;
+  }
+  &__person {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-items: center;
+    height: 18.6rem;
+    img {
+      height: 8rem;
+      border-radius: 50%;
+    }
+  }
+}

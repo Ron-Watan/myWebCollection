@@ -59,40 +59,201 @@ triggerObserver.observe(trigger);
 
 
 /////////////////////////
-const temp = document.querySelectorAll('.containerInner')
-const slidebtn = document.querySelector('.partnerContainer__slide')
 const parentEl = document.querySelector('.partnerContainer')
-/*
-slidebtn.addEventListener('click', function () {
-  const heightContentP = document.querySelector('.partnerContainer__paragraph').scrollHeight
+const containerInnerEl = document.querySelectorAll('.containerInner')
+const tapContainerEl = document.querySelectorAll('.partnerContainer__slide')
 
-  if (temp.style.height == 0) {
-    temp.style.height = `${heightContentP + 20}px`
-
-  } else {
-    temp.style.height = null
-
-  }
-
-  // temp.classList.toggle('activeSlide')
-})
-
-*/
-console.log(parentEl)
+//- Accordion
 parentEl.addEventListener('click', function (e) {
   const target = e.target.closest('.partnerContainer__slide')
-  const heightContentP = (target.childNodes[3].childNodes[1].childNodes[1]).scrollHeight
+  const InnerEl = target.querySelector('.containerInner')
+  const heightContentP = InnerEl.querySelector('.partnerContainer__paragraph').scrollHeight
 
 
-  if (target.childNodes[3].style.height == 0) {
-    temp.forEach(el => {
+  if (InnerEl.style.height == 0) {
+    containerInnerEl.forEach(el => {
       el.style.height = null
     })
-    target.childNodes[3].style.height = `${heightContentP + 20}px`
-
-  } else {
-    target.childNodes[3].style.height = null
-
+    tapContainerEl.forEach(el => {
+      el.classList.remove('font--darkGrey')
+    })
+    InnerEl.style.height = `${heightContentP + 20}px`
+    target.classList.add('font--darkGrey')
+  }
+  else {
+    InnerEl.style.height = null
+    target.classList.remove('font--darkGrey')
   }
 
 })
+
+
+///////////////////////////////////
+const techListEl = document.querySelector('.techModule__lists')
+const techParagraphEL = document.querySelectorAll('.techModule__right__paragraph')
+document.querySelector('.techModule__item').classList.add('itemHover-white')
+// techParagraphEL.classList.add('active')
+
+techListEl.addEventListener('click', function (e) {
+  const target = e.target.closest('.techModule__item')
+  const itemEl = document.querySelectorAll('.techModule__item')
+
+  itemEl.forEach(el => {
+    el.classList.remove('itemHover-white')
+  })
+  target.classList.add('itemHover-white')
+
+  techParagraphEL.forEach(el => {
+    if (el.dataset.p === target.dataset.title) {
+      el.classList.remove('hidden')
+      el.classList.add('fade-in-top')
+    } else {
+      el.classList.add('hidden')
+      el.classList.remove('fade-in-top')
+    }
+  })
+
+
+})
+
+//- Slide Track
+const sliceTrackEL = document.querySelector('.slideTrack')
+const numberSlides = sliceTrackEL.childElementCount
+const itemWidth = 43
+let start = 0
+let width = itemWidth;
+
+
+function sliderTranlateX() {
+  if (start < (numberSlides - 2)) {
+    console.log("01 ", width)
+    sliceTrackEL.style.transition = `all 2s ease`
+    sliceTrackEL.style.transform = `translateX(${width * -1}rem)`
+    start++
+    width += itemWidth
+  } else if (start >= (numberSlides - 2) && start < (numberSlides - 2) * 2 + 1) {
+    width -= itemWidth
+    console.log("02 ", width)
+    sliceTrackEL.style.transition = `all 2s ease`
+    sliceTrackEL.style.transform = `translateX(${width * -1}rem)`
+    start++
+    console.log("03 ", width)
+  } else clearInterval(slider)
+
+}
+
+// const slider = setInterval(sliderTranlateX, 4000)
+sliceTrackEL.addEventListener('click', function () {
+  clearInterval(slider)
+})
+
+
+//- Generate Maqqee
+
+
+const iconBoxoneEl = document.querySelectorAll('.boxone')
+const iconBoxoneId = document.querySelector('#box0ne')
+
+const iconListBoxEL = document.querySelector('.iconListBox')
+
+function addMarker() {
+  const marker = `
+  <div class="iconBox">
+  <div class="iconBoxInnr" style="background-color: none;">
+    <img src="img/icondev/web-applications-dev.svg" alt="web-applications-dev" style="max-width: 100%; height: auto;" class="lazyBg">
+    <span>Web applications <br> development</span>
+  </div>
+  </div>
+
+  <div class="iconBox">
+  <div class="iconBoxInnr">
+    <img src="img/icondev/static-website-dev.svg" alt="static-website-dev" style="max-width: 100%; height: auto;" class="lazyBg">
+    <span>Static website <br> development</span>
+  </div>
+  </div>
+
+  <div class="iconBox">
+  <div class="iconBoxInnr">
+    <img src="img/icondev/cms-dev.svg" alt="cms-dev" style="max-width: 100%; height: auto;" class="lazyBg">
+    <span>CMS development</span>
+  </div>
+  </div>
+
+  <div class="iconBox">
+  <div class="iconBoxInnr">
+    <img src="img/icondev/ecommerce-dev.svg" alt="ecommerce-dev" style="max-width: 100%; height: auto;" class="lazyBg">
+    <span>Ecommerce <br> development</span>
+  </div>
+  </div>
+
+  <div class="iconBox">
+  <div class="iconBoxInnr">
+    <img src="img/icondev/api-integrations.svg" alt="api-integrations" style="max-width: 100%; height: auto;" class="lazyBg">
+    <span>API integrations</span>
+  </div>
+  </div>
+
+  <div class="iconBox">
+  <div class="iconBoxInnr">
+    <img src="img/icondev/api-dev.svg" alt="api-dev" style="max-width: 100%; height: auto;" class="lazyBg">
+    <span>API Development</span>
+  </div>
+  </div>
+
+  <div class="iconBox">
+  <div class="iconBoxInnr">
+    <img src="img/icondev/bi-system-integr.svg" alt="bi-system-integr" style="max-width: 100%; height: auto;" class="lazyBg">
+    <span>BI systems <br> integrations</span>
+  </div>
+  </div>
+
+  <div class="iconBox">
+  <div class="iconBoxInnr">
+    <img src="img/icondev/mobile-web-apps.svg" alt="mobile-web-apps" style="max-width: 100%; height: auto;" class="lazyBg">
+    <span>Mobile web apps <br> (in-browser mobile apps)</span>
+  </div>
+  </div>
+
+`
+
+  iconListBoxEL.insertAdjacentHTML('beforeend', marker)
+
+}
+
+
+
+
+
+function obsCallbackIcon(entries) {
+  const entry = entries[0]; // or [entry]=entries
+  // console.log(entry.isIntersecting)
+  console.log(entry.boundingClientRect.left)
+  const position = (entry.boundingClientRect.left)
+  if (position < 0) iconBoxoneId.classList.add('disappear')
+  // if (!entry.intersectionRect.x) {
+  // if (!entry.isIntersecting) {
+
+}
+const obsOptionG = {
+  root: null, // target intersecting
+  threshold: 0, // Percentage of intersection will be call
+};
+
+const iconObserver = new IntersectionObserver(obsCallbackIcon, obsOptionG);
+
+iconObserver.observe(iconBoxoneId);
+
+
+
+// list.removeChild(list.firstElementChild);
+jQuery.expr.filters.offscreen = function (el) {
+  var rect = el.getBoundingClientRect();
+  return (
+    (rect.x + rect.width) < 0
+    || (rect.y + rect.height) < 0
+    || (rect.x > window.innerWidth || rect.y > window.innerHeight)
+  );
+};
+
+$(':offscreen');
+$('iconBoxoneId').is('offscreen');

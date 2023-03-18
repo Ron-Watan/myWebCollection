@@ -1,42 +1,44 @@
-.lazyContainer {
+.lazyMoveContainer {
   position: relative;
   display: flex;
   flex-direction: column;
   gap: 3rem;
+  overflow: hidden;
 }
-.temp {
-  display: flex;
+.lazyMoveTrack {
   opacity: 1;
-  width: 40000px;
-  transform: translateX(106.8rem);
-
-  transition: transform 10000ms linear 0s;
+  width: 4000rem;
+  animation: maqee 1000s infinite linear;
 }
-.cBoxColMainS {
+
+@keyframes maqee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.iconListBox {
   display: flex;
   gap: 2rem;
   align-items: center;
   white-space: nowrap;
-  //
 
-  // transform: translate3d(-1068px, 0px, 0px);
-  // transform: translateX(106.8rem);
+  .iconBox {
+    display: inline-block;
 
-  // transition: transform 10000ms linear 0s;
-
-  .cBoxCol1 {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    gap: 0.5rem;
+    // display: flex;
+    // align-items: center;
+    // width: 100%;
+    // gap: 0.5rem;
     font-size: 1.2rem;
     background-color: #fff;
     border-radius: 0.5rem;
     border: 1px solid #333;
-
-    // flex-wrap: nowrap;
   }
-  .cBoxCol1Innr {
+  .iconBoxInnr {
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -58,4 +60,10 @@
 
 .test1 {
   animation: lazyMove 15s 1 linear;
+}
+
+.disappear {
+  transform: scale(1.5);
+  opacity: 0;
+  transition: all 1s;
 }
