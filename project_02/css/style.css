@@ -33,7 +33,8 @@ a:visited {
   cursor: pointer;
   align-items: center;
   flex-wrap: nowrap;
-  white-space: nowrap; }
+  white-space: nowrap;
+  display: inline-block; }
 
 button {
   background: transparent;
@@ -104,6 +105,9 @@ button {
 
 .margin-bt-2 {
   margin-bottom: 2rem; }
+
+.margin-r-dot5 {
+  margin-right: .5rem; }
 
 .btn__link {
   color: #fff;
@@ -1085,7 +1089,7 @@ button {
     display: flex;
     align-self: stretch;
     font-weight: 700;
-    padding: 4rem 0; }
+    padding: 3rem 0; }
     .menu__link:hover {
       color: #33cac0; }
     .menu__link::after {
@@ -1205,3 +1209,73 @@ button {
 
 .test1 {
   animation: lazyMove 15s 1 linear; }
+
+.footerBottomSection {
+  padding: 5rem 0; }
+
+.footerBottom {
+  display: flex;
+  gap: 5rem; }
+  .footerBottom--title {
+    font-size: 1.7rem;
+    font-weight: 800;
+    margin-bottom: 2rem; }
+  .footerBottom--subTitle {
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    letter-spacing: -0.05rem;
+    color: #00b2a9; }
+  .footerBottom__left {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; }
+  .footerBottom__middile {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    border-left: 1px solid #ddd;
+    padding-left: 4rem; }
+  .footerBottom__right {
+    width: fit-content; }
+
+.ftbServiceContnr {
+  display: flex;
+  gap: 1.5rem; }
+
+.ftbserviceBox__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem; }
+
+.ftbserviceBox__item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  color: #999; }
+  .ftbserviceBox__item::before {
+    content: '';
+    display: inline-block;
+    left: 0;
+    top: 0;
+    width: 0.4rem;
+    height: 0.4rem;
+    background-color: #00b2a9;
+    border-radius: 50%; }
+  .ftbserviceBox__item:hover::before {
+    transition: all 0.3s;
+    box-shadow: 0 0 0 1px #00b2a9; }
+
+.footerLink {
+  font-size: 1.2rem;
+  width: fit-content;
+  color: #999;
+  font-weight: 500; }
+  .footerLink:hover {
+    color: #00b2a9;
+    transition: all 0.3s;
+    text-shadow: 0 0 1px #00b2a9; }

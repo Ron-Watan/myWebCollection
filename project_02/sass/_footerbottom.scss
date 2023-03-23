@@ -1,0 +1,85 @@
+.footerBottomSection {
+  padding: 5rem 0;
+}
+.footerBottom {
+  display: flex;
+  gap: 5rem;
+
+  &--title {
+    font-size: 1.7rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+  }
+  &--subTitle {
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    letter-spacing: -0.05rem;
+    color: #00b2a9;
+  }
+
+  &__left {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  &__middile {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    border-left: 1px solid #ddd;
+    padding-left: 4rem;
+  }
+  &__right {
+    width: fit-content;
+  }
+}
+
+.ftbServiceContnr {
+  display: flex;
+  gap: 1.5rem;
+}
+.ftbserviceBox {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  &__item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+    color: #999;
+
+    &::before {
+      content: '';
+      display: inline-block;
+      left: 0;
+      top: 0;
+      width: 0.4rem;
+      height: 0.4rem;
+      background-color: #00b2a9;
+      border-radius: 50%;
+    }
+    &:hover::before {
+      transition: all 0.3s;
+      box-shadow: 0 0 0 1px #00b2a9;
+    }
+  }
+}
+
+.footerLink {
+  font-size: 1.2rem;
+  width: fit-content;
+  color: #999;
+  font-weight: 500;
+  &:hover {
+    color: #00b2a9;
+    transition: all 0.3s;
+    text-shadow: 0 0 1px #00b2a9;
+  }
+}
