@@ -129,6 +129,9 @@
   opacity: 0;
   visibility: hidden;
 }
+.displayNone {
+  display: none !important;
+}
 
 //////////////////////
 .empty {
@@ -141,4 +144,19 @@
 
 .font--darkGrey {
   color: #333 !important;
+}
+
+.active--greenBtn {
+  background-color: #00b2a9;
+  border: #00b2a9 solid 1px !important;
+
+}
+
+.link--green {
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #00b2a9;
+  transition: all 0.3s;
+  display: inline-block;
 }

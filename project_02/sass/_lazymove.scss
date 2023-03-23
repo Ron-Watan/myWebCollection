@@ -6,17 +6,21 @@
   overflow: hidden;
 }
 .lazyMoveTrack {
+  display: flex;
   opacity: 1;
   width: 4000rem;
-  animation: maqee 1000s infinite linear;
+  animation: maqee 100s 2 linear;
 }
 
 @keyframes maqee {
-  from {
+  0% {
     transform: translateX(0);
   }
-  to {
-    transform: translateX(-100%);
+  95% {
+    transform: translateX(-148.7195rem);
+  }
+  100% {
+    transform: translateX(-148.7195rem);
   }
 }
 
@@ -27,10 +31,10 @@
   white-space: nowrap;
 
   .iconBox {
-    display: inline-block;
+    // display: inline-block;
 
-    // display: flex;
-    // align-items: center;
+    display: flex;
+    align-items: center;
     // width: 100%;
     // gap: 0.5rem;
     font-size: 1.2rem;
@@ -60,10 +64,4 @@
 
 .test1 {
   animation: lazyMove 15s 1 linear;
-}
-
-.disappear {
-  transform: scale(1.5);
-  opacity: 0;
-  transition: all 1s;
 }

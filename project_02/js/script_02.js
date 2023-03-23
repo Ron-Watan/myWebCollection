@@ -11,7 +11,6 @@ function crossHover(elHover, elTarget, toggleClassName) {
   }));
 }
 crossHover(popUpMenuEl, menuListEl, 'visible')
-
 //////////////////////////////////////////////////////////////////
 const trigger = document.querySelector('.trigger') //at body or main
 const header = document.querySelector('.header')
@@ -154,106 +153,111 @@ sliceTrackEL.addEventListener('click', function () {
 const iconBoxoneEl = document.querySelectorAll('.boxone')
 const iconBoxoneId = document.querySelector('#box0ne')
 
+
+const lazyMoveTrackEl = document.querySelector('.lazyMoveTrack')
 const iconListBoxEL = document.querySelector('.iconListBox')
 
-function addMarker() {
-  const marker = `
-  <div class="iconBox">
-  <div class="iconBoxInnr" style="background-color: none;">
-    <img src="img/icondev/web-applications-dev.svg" alt="web-applications-dev" style="max-width: 100%; height: auto;" class="lazyBg">
-    <span>Web applications <br> development</span>
-  </div>
-  </div>
 
-  <div class="iconBox">
-  <div class="iconBoxInnr">
-    <img src="img/icondev/static-website-dev.svg" alt="static-website-dev" style="max-width: 100%; height: auto;" class="lazyBg">
-    <span>Static website <br> development</span>
-  </div>
-  </div>
+// setTimeout(function () {
+//   const iconListBoxELWidth = iconListBoxEL.offsetWidth
+//   lazyMoveTrackEl.style.transform = `translateX(${(iconListBoxELWidth / -2) / 10}rem)`
+// },3000)
+// lazyMoveTrackEl.addEventListener("transitionend", () => {
+//   console.log("Transition ended");
+//   lazyMoveTrackEl.style.transition = null;
 
-  <div class="iconBox">
-  <div class="iconBoxInnr">
-    <img src="img/icondev/cms-dev.svg" alt="cms-dev" style="max-width: 100%; height: auto;" class="lazyBg">
-    <span>CMS development</span>
-  </div>
-  </div>
-
-  <div class="iconBox">
-  <div class="iconBoxInnr">
-    <img src="img/icondev/ecommerce-dev.svg" alt="ecommerce-dev" style="max-width: 100%; height: auto;" class="lazyBg">
-    <span>Ecommerce <br> development</span>
-  </div>
-  </div>
-
-  <div class="iconBox">
-  <div class="iconBoxInnr">
-    <img src="img/icondev/api-integrations.svg" alt="api-integrations" style="max-width: 100%; height: auto;" class="lazyBg">
-    <span>API integrations</span>
-  </div>
-  </div>
-
-  <div class="iconBox">
-  <div class="iconBoxInnr">
-    <img src="img/icondev/api-dev.svg" alt="api-dev" style="max-width: 100%; height: auto;" class="lazyBg">
-    <span>API Development</span>
-  </div>
-  </div>
-
-  <div class="iconBox">
-  <div class="iconBoxInnr">
-    <img src="img/icondev/bi-system-integr.svg" alt="bi-system-integr" style="max-width: 100%; height: auto;" class="lazyBg">
-    <span>BI systems <br> integrations</span>
-  </div>
-  </div>
-
-  <div class="iconBox">
-  <div class="iconBoxInnr">
-    <img src="img/icondev/mobile-web-apps.svg" alt="mobile-web-apps" style="max-width: 100%; height: auto;" class="lazyBg">
-    <span>Mobile web apps <br> (in-browser mobile apps)</span>
-  </div>
-  </div>
-
-`
-
-  iconListBoxEL.insertAdjacentHTML('beforeend', marker)
-
-}
+// });
 
 
 
 
 
-function obsCallbackIcon(entries) {
-  const entry = entries[0]; // or [entry]=entries
-  // console.log(entry.isIntersecting)
-  console.log(entry.boundingClientRect.left)
-  const position = (entry.boundingClientRect.left)
-  if (position < 0) iconBoxoneId.classList.add('disappear')
-  // if (!entry.intersectionRect.x) {
-  // if (!entry.isIntersecting) {
 
-}
-const obsOptionG = {
-  root: null, // target intersecting
-  threshold: 0, // Percentage of intersection will be call
-};
 
-const iconObserver = new IntersectionObserver(obsCallbackIcon, obsOptionG);
 
-iconObserver.observe(iconBoxoneId);
+
+
+
 
 
 
 // list.removeChild(list.firstElementChild);
-jQuery.expr.filters.offscreen = function (el) {
-  var rect = el.getBoundingClientRect();
-  return (
-    (rect.x + rect.width) < 0
-    || (rect.y + rect.height) < 0
-    || (rect.x > window.innerWidth || rect.y > window.innerHeight)
-  );
-};
 
-$(':offscreen');
-$('iconBoxoneId').is('offscreen');
+
+///////////////////////
+//- Unhide-Email
+
+const parentStaffboxEl = document.querySelector('.tellUsWrapper__right')
+// const hideEmailEl = document.querySelector('.email-hide')
+// const unhideEmailEl = document.querySelector('.email-unhide')
+
+parentStaffboxEl.addEventListener('click', function (e) {
+  const mailBoxEl = e.target.closest(".email-box")
+  if (!mailBoxEl) return
+  mailBoxEl.querySelector('.email-box--hidden').style.opacity = "0"
+  mailBoxEl.querySelector('.email-box--visible').style.display = "block"
+  // const unhideEmailEl = hideEmailEl
+  // hideEmailEl.style.display = "none"
+  // unhideEmailEl.classList.remove('hidden')
+
+})
+
+//- Circle Bottom
+
+const blogPostBtnEl = document.querySelector('.blogPostBtn--btn')
+const blogPostBoxEl = document.querySelectorAll('.blogPostBox')
+const circleBtnEl = document.querySelectorAll('.circleBtn')
+const readmoreSlideEl = document.querySelectorAll('.readmoreSlide')
+
+blogPostBtnEl.addEventListener('click', function (e) {
+  const targetBtn = e.target.closest('.circleBtn')
+  if (!targetBtn) return
+  circleBtnEl.forEach(el => {
+    el.classList.remove('active--greenBtn')
+  });
+  targetBtn.classList.add('active--greenBtn')
+  blogPostBoxEl.forEach(el => {
+    el.style.transform = `translateX(${-targetBtn.dataset.pageindex * 100}%)`
+
+  })
+  readmoreSlideEl.forEach(el => {
+    el.style.transform = `translateX(${-targetBtn.dataset.pageindex * 100}%)`
+
+  })
+
+})
+
+const parentLocationBox = document.querySelector('.locationBox')
+const cityBoxNameEl = document.querySelectorAll('.cityBox__name')
+const cityBoxAddressBoxEl = document.querySelectorAll('.cityBox__addressBox')
+const ringEl = document.querySelectorAll('.ring')
+//- Accordion
+parentLocationBox.addEventListener('click', function (e) {
+  const target = e.target.closest('.cityBox__name')
+  const boxAddressEl = target.nextElementSibling
+
+  const heightBoxAddressEl = boxAddressEl.scrollHeight
+
+  if (boxAddressEl.style.height == 0) {
+    cityBoxAddressBoxEl.forEach(el => {
+      el.style.height = null
+    })
+    cityBoxNameEl.forEach(el => {
+      el.classList.remove('locName-active')
+    })
+    ringEl.forEach(el => {
+      el.classList.remove('ring-active')
+    })
+    boxAddressEl.style.height = `${heightBoxAddressEl}px`
+    target.classList.add('locName-active')
+    target.querySelector('.ring').classList.add('ring-active')
+
+  }
+  else {
+    boxAddressEl.style.height = null
+    target.classList.remove('locName-active')
+    target.querySelector('.ring').classList.remove('ring-active')
+
+  }
+
+})
