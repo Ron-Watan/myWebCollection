@@ -1,0 +1,233 @@
+.hero {
+  width: 100%;
+  height: 42em;
+}
+.trigger {
+  display: block;
+}
+.heroWrapper {
+  width: 100%;
+  height: 100%;
+  // background-image: linear-gradient(to top, rgba(0, 0, 0, .95), rgba($color-darkBlue-3, .95)), url('../img/Temp/6195.webp');
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.902), rgba(0, 0, 0, 0.235)), url('../img/Temp/header-background.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  padding: 5rem 2rem;
+}
+
+.main {
+  width: 100%;
+  height: 95vh;
+  background-color: #fff;
+}
+
+.lightboxOverlay {
+  background-color: #000;
+  filter: alpha(Opacity=80);
+  left: 0;
+  opacity: 0.1;
+  position: absolute;
+  top: 0;
+}
+
+////////////////
+.heroContainer {
+  display: flex;
+  align-items: center;
+  padding-top: 10rem;
+  padding-bottom: 5rem;
+}
+.heroModule__left {
+  display: flex;
+  width: 50%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+
+  color: $color-white;
+  h1 {
+    font-family: $font-title;
+    font-weight: 800;
+    -webkit-background-clip: text;
+    color: transparent;
+    // background-image: linear-gradient(80deg, $color-blue-6 0%, $color-green-6 150%);
+    color: $color-blue-10;
+  }
+}
+
+.heroBtnControl {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+@keyframes autoHeroSlider {
+  0% {
+    transform: translateY(0%);
+  }
+  10% {
+    transform: translateY(-100%);
+  }
+  50% {
+    transform: translateY(-100%);
+  }
+  60% {
+    transform: translateY(-200%);
+  }
+  100% {
+    transform: translateY(-200%);
+  }
+}
+
+.heroModule__right {
+  display: flex;
+  width: 50%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 3rem;
+  color: $color-white;
+}
+
+.heroSliderContainer {
+  width: 100%;
+  height: 75%;
+  overflow: hidden;
+}
+.heroSliderTrack {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.heroSlider {
+  transform: translateY(0%);
+  padding-right: 1rem;
+  transition: all 0.3s ease-in;
+  min-height: 100%;
+  // animation: autoHeroSlider 5s 1 2s, autoHeroSlider 5s 1 6s reverse;
+  h2 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 3rem;
+  }
+  p {
+    font-size: 1.8rem;
+  }
+}
+
+.heroModule-dev {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  cursor:pointer;
+
+  &__img {
+    width: 5rem;
+    border-radius: 50%;
+  }
+  &__namePosition {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    span:first-child {
+      font-size: 1.4rem;
+      text-transform: uppercase;
+      color: $color-blue-6;
+      font-weight: 600;
+    }
+    span:nth-child(2) {
+      font-size: 1.3rem;
+      font-weight: 500;
+    }
+  }
+}
+
+.paragraph {
+  &--large {
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.8;
+  }
+
+  &--normal {
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+}
+
+.bar {
+  padding: 5rem 6rem 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+  &--line {
+    width: 0.1rem;
+    height: 5rem;
+    background-color: $color-blue-6;
+  }
+  &--lineSm {
+    width: 0.1rem;
+    height: 3rem;
+    background-color: $color-blue-6;
+  }
+  &--lineLg {
+    width: 0.1rem;
+    height: 20rem;
+    background-color: $color-blue-6;
+  }
+}
+// .lineicon {
+//   path {
+//     fill: $color-blue-6;
+//   }
+//   rect {
+//     stroke: $color-blue-6;
+//   }
+//   rect:nth-child(2) {
+//     fill: $color-blue-6;
+//   }
+// }
+
+.heroIcon {
+  color: $color-blue-6;
+  width: 2.5rem;
+}
+
+.circleBtn-hero {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: rgba($color-blue-6, 0.2);
+
+  border: $color-blue-6 solid 1px;
+
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s;
+  position: relative;
+
+  &:hover {
+    background-color: $color-blue-6;
+    border: $color-blue-6 solid 1px;
+  }
+  &:hover .hero--ring {
+    opacity: 1;
+  }
+}
+.hero--ring {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: $color-blue-6 solid 1px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all.3s;
+}

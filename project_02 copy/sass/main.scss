@@ -1,14 +1,9 @@
-@import 'variable';
-@import 'base';
-@import 'generic';
-
 @import '01-header/navbar';
 @import '01-header/menu';
 @import '01-header/burgur-icon';
 
 @import '02-hero/hero';
 
-@import '03-main/awardSection';
 @import '03-main/trustsection';
 @import '03-main/tech';
 @import '03-main/development';
@@ -19,3 +14,6 @@
 
 @import '04-footer/bloglocation';
 @import '04-footer/footerbottom';
+
+@import 'base';
+@import 'generic';

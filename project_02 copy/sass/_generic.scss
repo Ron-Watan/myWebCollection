@@ -68,9 +68,10 @@
 }
 ///////////////////////////////
 .margin-r-dot5 {
-  margin-right: 0.5rem;
+  margin-right: .5rem;
 }
 ///////////////////////////////
+
 
 .btn__link {
   color: #fff;
@@ -79,39 +80,15 @@
   line-height: 1.1;
   text-transform: uppercase;
   padding: 1.5rem 2.5rem;
-  border-radius: 3rem;
+  border-radius: 4rem;
   display: inline-block;
 }
-.fill--blue {
-  background: linear-gradient(180deg, rgba($color-black-0, 0.2), rgba($color-black-0, 0.2)), linear-gradient(60deg, $color-blue-6 0%, $color-green-6 200%);
-  position: relative;
-  // overflow: hidden;
-  &::after {
-    position: absolute;
-    content: '';
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 3rem;
-    background: rgba($color-green-6, 0.25);
-    transition: all 0.3s;
-    opacity: 0;
-  }
-
-  &:hover::after {
-    opacity: 1;
-    transition: all 0.3s;
-  }
+.fill--green {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), linear-gradient(69deg, #09b3bf, #5fe3c2);
 }
-
 .border--green {
-  border: $color-blue-6 2px solid;
-  color: $color-blue-6;
-  transition: all 0.3s;
-  &:hover {
-    background-color: rgba($color-blue-6, 0.15);
-  }
+  border: #5fe3c2 2px solid;
+  color: #5fe3c2;
 }
 
 ////////////////////////////////
@@ -130,17 +107,12 @@
   max-width: 123rem;
   width: 100%;
   margin: 0 auto;
-  padding: 0 1.5rem 0 1.5rem;
+  padding: 0 1.7rem 0 1.5rem;
 }
-.container__middle {
-  max-width: 123rem;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 1.5rem 0 1.5rem;
-}
+
 //////////////////////
 
-@keyframes fadeInUp {
+@keyframes fadeInTop {
   0% {
     opacity: 0;
     transform: translateY(4rem);
@@ -150,8 +122,8 @@
     transform: none;
   }
 }
-.fade-in-up {
-  animation: fadeInUp 1s 1 ease;
+.fade-in-top {
+  animation: fadeInTop 1s 1 ease;
 }
 
 .active {
@@ -179,20 +151,17 @@
   color: #333 !important;
 }
 
-.active--blueBtn {
-  background-color: $color-blue-6 !important;
-  border: $color-blue-6 solid 1px !important;
-}
+.active--greenBtn {
+  background-color: #00b2a9;
+  border: #00b2a9 solid 1px !important;
 
-.active--ring {
-  opacity: 1 !important;
 }
 
 .link--green {
   text-transform: uppercase;
   font-size: 1.2rem;
   font-weight: 700;
-  color: $color-blue-6;
+  color: #00b2a9;
   transition: all 0.3s;
   display: inline-block;
 }

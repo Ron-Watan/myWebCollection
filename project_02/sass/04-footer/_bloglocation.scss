@@ -1,0 +1,160 @@
+.blogLocationSection {
+  background-color: #161717;
+  padding: 5rem 0 10rem;
+}
+.containerPadLeft {
+  padding-left: 17rem;
+  color: #fff;
+}
+.blogLocation {
+  display: flex;
+}
+
+.blogPost {
+  width: 30%;
+  padding-right: 5rem;
+  // background-color: beige;
+  h2 {
+    font-size: 3.5rem;
+    margin-bottom: 3rem;
+  }
+}
+.blogPostPages {
+  display: flex;
+  overflow: hidden;
+  margin-bottom: 6rem;
+}
+.blogPostBox {
+  // background-color: #00b2a9;
+  min-width: 100%;
+  transform: translateX(-0%);
+  transition: all 0.3s;
+  &__title {
+    font-size: 1.6rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+  }
+  &__paragraph {
+    font-size: 1.3rem;
+    color: #999;
+  }
+}
+
+.blogPostBtn__Box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.blogPostBtn--btn {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  .line {
+    width: 1.2rem;
+    height: 0.1rem;
+    background-color: $color-white;
+  }
+}
+
+.circleBtn {
+  width: 1.5rem;
+  height: 1.5rem;
+  border: $color-white solid 1px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: $color-blue-6;
+    border: $color-blue-6 solid 1px;
+  }
+}
+
+.readmoreBox {
+  width: 30%;
+  display: flex;
+  font-size: 1.2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  overflow: hidden;
+}
+.readmoreSlide {
+  min-width: 100%;
+}
+
+.location {
+  width: 60%;
+  h2 {
+    font-size: 3.5rem;
+    margin-bottom: 3rem;
+  }
+}
+
+.locationBox {
+  .cityBox {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    &__name {
+      display: flex;
+      width: fit-content;
+      align-items: center;
+      gap: 1rem;
+      font-size: 1.3rem;
+      color: #999;
+      font-weight: 600;
+      padding: 0.6rem 0;
+      cursor: pointer;
+
+      &:hover,
+      &:focus {
+        color: #00b2a9;
+        font-weight: 700;
+        transition: all 0.5s;
+      }
+
+      &:hover .ring {
+        opacity: 1;
+        transition: all 0.5s;
+      }
+      .dot {
+        position: relative;
+        display: inline-block;
+        width: 0.75rem;
+        height: 0.75rem;
+        background-color: #00b2a957;
+        border: #00b2a9 1px solid;
+        border-radius: 50%;
+      }
+      .ring {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 1.75rem;
+        height: 1.75rem;
+        border: #00b2a9 1px solid;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+      }
+    }
+
+    .locName-active {
+      color: #00b2a9;
+      font-weight: 700;
+    }
+
+
+    &__addressBox {
+      height: 0;
+      overflow: hidden;
+      transition: all 1s;
+    }
+
+    &__addressInner {
+      font-size: 1.3rem;
+      font-weight: 500;
+      margin: 0.5rem 0 2rem;
+    }
+  }
+}

@@ -1,0 +1,134 @@
+.awardSection {
+  padding-top: 10rem;
+  padding-bottom: 8rem;
+  background-color: $color-blue-10;
+}
+.awardContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &__left {
+    width: 60%;
+    h2 {
+      font-size: 4rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 3rem;
+    }
+    p {
+      font-size: 1.8rem;
+      margin-bottom: 5rem;
+    }
+  }
+  &__right {
+  }
+
+  .reviewBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    &--counts {
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+    &--logo {
+      width: 6rem;
+    }
+    &--points {
+      // font-family: $font-title;
+      font-size: 12rem;
+      font-weight: 900;
+      line-height: 1.2;
+    }
+    &--stars {
+      align-self: stretch;
+    }
+  }
+}
+
+.reviewBox {
+}
+.stars {
+}
+
+//-
+
+@keyframes cardAppear {
+  to {
+    transform: rotateY(0deg);
+  }
+  from {
+    transform: rotateY(90deg);
+  }
+}
+@keyframes cardDisappear {
+  to {
+    transform: rotateY(-90deg);
+    transition: opacity 0.5s;
+    opacity: 1;
+  }
+  from {
+    transform: rotateY(0deg);
+  }
+}
+.cardBackface {
+  transform: rotateY(90deg) !important;
+  backface-visibility: visible;
+}
+
+.cardAppear {
+  animation: cardAppear 2s 0.8s 1 forwards;
+  transition: opacity 2s;
+}
+.cardDisappear {
+  animation: cardDisappear 1s 0.8s 1 forwards;
+}
+
+.awardLazyMove {
+  padding-top: 2rem;
+  padding-bottom: 5rem;
+  overflow: hidden;
+}
+.awardLazyMoveTrack {
+  display: flex;
+  padding-left: 3rem;
+
+  &__inner {
+    perspective: 150rem;
+    transition: all 5s;
+    padding: 2rem;
+  }
+
+  &__item {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    width: 24.3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem;
+    box-shadow: 0.2rem 0.2rem 4rem -1rem rgba($color-black-0, 0.15);
+    border-radius: 2rem;
+    transition: all 1s;
+
+    .imgBox {
+      min-height: 15rem;
+      img {
+        max-width: 20rem;
+        transition: all 0.3s;
+        cursor: pointer;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+    h5 {
+    }
+    p {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+  }
+}

@@ -54,91 +54,6 @@ const triggerObserver = new IntersectionObserver(obsCallbackHeader, obsOption);
 
 triggerObserver.observe(trigger);
 
-//- Hero circle bottom
-
-const barParentEl = document.querySelector('.bar')
-const heroSliderEl = document.querySelectorAll('.heroSlider')
-const heroCircleBtnEl = document.querySelectorAll('.circleBtn-hero')
-const heroRingEl = document.querySelectorAll('.hero--ring')
-
-
-function autoHeroSlider(numSlide) {
-  heroSliderEl.forEach(el => {
-    el.style.transform = `translateY(${-numSlide * 100}%)`
-  })
-  heroRingEl.forEach(el => {
-    el.classList.remove('active--ring')
-  })
-  heroCircleBtnEl.forEach(el => {
-    el.classList.remove('active--blueBtn')
-    if (el.dataset.pageindex == numSlide) {
-      el.classList.add('active--blueBtn')
-      el.firstChild.classList.add('active--ring')
-    }
-  });
-}
-let page = 0;
-const loadHeroSlider = setInterval(function () {
-  autoHeroSlider(page)
-  page++
-  if (page == 3) {
-    page = 0
-  }
-}, 2500)
-
-clearInterval(loadHeroSlider)
-
-barParentEl.addEventListener('click', function (e) {
-  const targetBtn = e.target.closest('.circleBtn-hero')
-  if (!targetBtn) return
-  clearInterval(loadHeroSlider)
-
-  heroSliderEl.forEach(el => {
-    el.style.transform = `translateY(${-targetBtn.dataset.pageindex * 100}%)`
-
-  })
-  // Style Botton
-  heroCircleBtnEl.forEach(el => {
-    el.classList.remove('active--blueBtn')
-    el.firstChild.classList.remove('active--ring')
-  });
-  targetBtn.classList.add('active--blueBtn')
-  targetBtn.querySelector('.hero--ring').classList.add('active--ring')
-})
-
-
-
-
-//- Ron
-
-const heroDevEl = document.querySelector('.heroModule-dev')
-
-function crossHover2(elHover) {
-  ['mouseenter', 'mouseleave'].forEach(event => elHover.addEventListener(event, function () {
-    heroSliderEl.forEach(el => {
-      el.style.transform = `translateY(-300%)`
-    })
-    heroCircleBtnEl.forEach(el => {
-      el.classList.remove('active--blueBtn')
-      el.firstChild.classList.remove('active--ring')
-    });
-
-
-  }));
-
-}
-
-crossHover2(heroDevEl) //-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -287,7 +202,7 @@ parentStaffboxEl.addEventListener('click', function (e) {
 
 })
 
-//- Slide Circle Bottom
+//- Circle Bottom
 
 const blogPostBtnEl = document.querySelector('.blogPostBtn--btn')
 const blogPostBoxEl = document.querySelectorAll('.blogPostBox')
@@ -298,9 +213,9 @@ blogPostBtnEl.addEventListener('click', function (e) {
   const targetBtn = e.target.closest('.circleBtn')
   if (!targetBtn) return
   circleBtnEl.forEach(el => {
-    el.classList.remove('active--blueBtn')
+    el.classList.remove('active--greenBtn')
   });
-  targetBtn.classList.add('active--blueBtn')
+  targetBtn.classList.add('active--greenBtn')
   blogPostBoxEl.forEach(el => {
     el.style.transform = `translateX(${-targetBtn.dataset.pageindex * 100}%)`
 
@@ -331,74 +246,18 @@ parentLocationBox.addEventListener('click', function (e) {
       el.classList.remove('locName-active')
     })
     ringEl.forEach(el => {
-      el.classList.remove('active--ring')
+      el.classList.remove('ring-active')
     })
     boxAddressEl.style.height = `${heightBoxAddressEl}px`
     target.classList.add('locName-active')
-    target.querySelector('.ring').classList.add('active--ring')
+    target.querySelector('.ring').classList.add('ring-active')
 
   }
   else {
     boxAddressEl.style.height = null
     target.classList.remove('locName-active')
-    target.querySelector('.ring').classList.remove('active--ring')
+    target.querySelector('.ring').classList.remove('ring-active')
 
   }
 
 })
-
-
-
-//- Award Moving
-
-const cardEl = document.querySelectorAll('.awardLazyMoveTrack__inner')
-
-
-let startCard = 1;
-const cardLazyMove = setInterval(function () {
-  cardEl.forEach(el => {
-
-    el.style.transform = `translateX(${-startCard * 100}%)`
-    if (el.dataset.cardindex == (startCard - 1)) {
-      el.querySelector('.awardLazyMoveTrack__item').classList.add('cardDisappear')
-    }
-    else if (el.dataset.cardindex == (startCard + 3)) {
-      el.querySelector('.awardLazyMoveTrack__item').classList.add('cardAppear')
-      setTimeout(function () {
-        el.querySelector('.awardLazyMoveTrack__item').classList.remove('cardBackface')
-
-      }, 1000)
-
-      // el.querySelector('.awardLazyMoveTrack__item').classList.remove('hidden')
-
-
-    }
-  })
-  startCard++
-  if (startCard > 9) {
-    cardEl.forEach(el => {
-      el.querySelector('.awardLazyMoveTrack__item').classList.remove('cardDisappear')
-      el.querySelector('.awardLazyMoveTrack__item').classList.remove('cardAppear')
-      el.style.transition = `all 0s`
-      el.style.transform = `translateX(0%)`
-
-      if (el.dataset.cardindex >= (4)) {
-
-        el.querySelector('.awardLazyMoveTrack__item').classList.add('cardBackface')
-        console.log(el.querySelector('.awardLazyMoveTrack__item'))
-      }
-    })
-    setTimeout(function () {
-      cardEl.forEach(el => {
-        // el.querySelector('.awardLazyMoveTrack__item').classList.add('cardDisappear')
-        el.style.transition = `all 5s`
-      })
-
-    }, 100)
-
-    // cardBackface
-
-    startCard = 1
-  }
-}, 5000)
-clearInterval(cardLazyMove) //-
