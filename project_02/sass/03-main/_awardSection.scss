@@ -1,6 +1,6 @@
 .awardSection {
   padding-top: 10rem;
-  padding-bottom: 8rem;
+  padding-bottom: 5rem;
   background-color: $color-blue-10;
 }
 .awardContainer {
@@ -10,9 +10,6 @@
   &__left {
     width: 60%;
     h2 {
-      font-size: 4rem;
-      font-weight: 800;
-      line-height: 1.2;
       margin-bottom: 3rem;
     }
     p {
@@ -22,34 +19,29 @@
   }
   &__right {
   }
-
-  .reviewBox {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    &--counts {
-      font-size: 1.8rem;
-      font-weight: 700;
-    }
-    &--logo {
-      width: 6rem;
-    }
-    &--points {
-      // font-family: $font-title;
-      font-size: 12rem;
-      font-weight: 900;
-      line-height: 1.2;
-    }
-    &--stars {
-      align-self: stretch;
-    }
-  }
 }
 
 .reviewBox {
-}
-.stars {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  &--counts {
+    font-size: 1.8rem;
+    font-weight: 700;
+  }
+  &--logo {
+    width: 6rem;
+  }
+  &--points {
+    // font-family: $font-title;
+    font-size: 12rem;
+    font-weight: 900;
+    line-height: 1.2;
+  }
+  &--stars {
+    align-self: stretch;
+  }
 }
 
 //-

@@ -44,15 +44,22 @@
   height: 100%;
   flex-direction: column;
   justify-content: space-between;
-
-  color: $color-white;
-  h1 {
-    font-family: $font-title;
-    font-weight: 800;
-    -webkit-background-clip: text;
-    color: transparent;
-    // background-image: linear-gradient(80deg, $color-blue-6 0%, $color-green-6 150%);
-    color: $color-blue-10;
+  padding-top: 2rem;
+  &__TitleBox {
+    h1 {
+      font-family: $font-title;
+      font-weight: 800;
+      margin-bottom: 2rem;
+      -webkit-background-clip: text;
+      color: transparent;
+      // background-image: linear-gradient(80deg, $color-blue-6 0%, $color-green-6 150%);
+      color: $color-blue-10;
+    }
+    p {
+      font-size: 2rem;
+      font-weight: 400;
+      color: $color-blue-10;
+    }
   }
 }
 
@@ -121,7 +128,7 @@
   display: flex;
   gap: 2rem;
   align-items: center;
-  cursor:pointer;
+  cursor: pointer;
 
   &__img {
     width: 5rem;

@@ -2,14 +2,15 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 2rem;
   overflow: hidden;
+  
 }
 .lazyMoveTrack {
   display: flex;
   opacity: 1;
   width: 4000rem;
-  animation: maqee 100s 2 linear;
+  // animation: maqee 100s 2 linear;
 }
 
 @keyframes maqee {
@@ -40,7 +41,15 @@
     font-size: 1.2rem;
     background-color: #fff;
     border-radius: 0.5rem;
-    border: 1px solid #333;
+    border: 1px solid #eee;
+    box-shadow: 0 0.2rem 4rem -1rem rgba($color-black-0, 0.15);
+    padding: 0.5rem;
+
+    transition: all 0.3s;
+    &:hover {
+      transform: scale(1.1);
+      cursor: pointer;
+    }
   }
   .iconBoxInnr {
     display: flex;

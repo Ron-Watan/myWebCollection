@@ -190,17 +190,17 @@ techListEl.addEventListener('click', function (e) {
   techParagraphEL.forEach(el => {
     if (el.dataset.p === target.dataset.title) {
       el.classList.remove('hidden')
-      el.classList.add('fade-in-top')
+      el.classList.add('fade-in-up')
     } else {
       el.classList.add('hidden')
-      el.classList.remove('fade-in-top')
+      el.classList.remove('fade-in-up')
     }
   })
 
 
 })
 
-//- Slide Track
+//- Slide Track Vertical
 const sliceTrackEL = document.querySelector('.slideTrack')
 const numberSlides = sliceTrackEL.childElementCount
 const itemWidth = 43
@@ -226,7 +226,6 @@ function sliderTranlateX() {
 
 }
 
-// const slider = setInterval(sliderTranlateX, 4000)
 sliceTrackEL.addEventListener('click', function () {
   clearInterval(slider)
 })
@@ -235,12 +234,12 @@ sliceTrackEL.addEventListener('click', function () {
 //- Generate Maqqee
 
 
-const iconBoxoneEl = document.querySelectorAll('.boxone')
-const iconBoxoneId = document.querySelector('#box0ne')
+// const iconBoxoneEl = document.querySelectorAll('.boxone')
+// const iconBoxoneId = document.querySelector('#box0ne')
 
 
-const lazyMoveTrackEl = document.querySelector('.lazyMoveTrack')
-const iconListBoxEL = document.querySelector('.iconListBox')
+// const lazyMoveTrackEl = document.querySelector('.lazyMoveTrack')
+// const iconListBoxEL = document.querySelector('.iconListBox')
 
 
 // setTimeout(function () {
@@ -270,82 +269,6 @@ const iconListBoxEL = document.querySelector('.iconListBox')
 
 
 ///////////////////////
-//- Unhide-Email
-
-const parentStaffboxEl = document.querySelector('.tellUsWrapper__right')
-// const hideEmailEl = document.querySelector('.email-hide')
-// const unhideEmailEl = document.querySelector('.email-unhide')
-
-parentStaffboxEl.addEventListener('click', function (e) {
-  const mailBoxEl = e.target.closest(".email-box")
-  if (!mailBoxEl) return
-  mailBoxEl.querySelector('.email-box--hidden').style.opacity = "0"
-  mailBoxEl.querySelector('.email-box--visible').style.display = "block"
-  // const unhideEmailEl = hideEmailEl
-  // hideEmailEl.style.display = "none"
-  // unhideEmailEl.classList.remove('hidden')
-
-})
-
-//- Slide Circle Bottom
-
-const blogPostBtnEl = document.querySelector('.blogPostBtn--btn')
-const blogPostBoxEl = document.querySelectorAll('.blogPostBox')
-const circleBtnEl = document.querySelectorAll('.circleBtn')
-const readmoreSlideEl = document.querySelectorAll('.readmoreSlide')
-
-blogPostBtnEl.addEventListener('click', function (e) {
-  const targetBtn = e.target.closest('.circleBtn')
-  if (!targetBtn) return
-  circleBtnEl.forEach(el => {
-    el.classList.remove('active--blueBtn')
-  });
-  targetBtn.classList.add('active--blueBtn')
-  blogPostBoxEl.forEach(el => {
-    el.style.transform = `translateX(${-targetBtn.dataset.pageindex * 100}%)`
-
-  })
-  readmoreSlideEl.forEach(el => {
-    el.style.transform = `translateX(${-targetBtn.dataset.pageindex * 100}%)`
-
-  })
-
-})
-
-const parentLocationBox = document.querySelector('.locationBox')
-const cityBoxNameEl = document.querySelectorAll('.cityBox__name')
-const cityBoxAddressBoxEl = document.querySelectorAll('.cityBox__addressBox')
-const ringEl = document.querySelectorAll('.ring')
-//- Accordion
-parentLocationBox.addEventListener('click', function (e) {
-  const target = e.target.closest('.cityBox__name')
-  const boxAddressEl = target.nextElementSibling
-
-  const heightBoxAddressEl = boxAddressEl.scrollHeight
-
-  if (boxAddressEl.style.height == 0) {
-    cityBoxAddressBoxEl.forEach(el => {
-      el.style.height = null
-    })
-    cityBoxNameEl.forEach(el => {
-      el.classList.remove('locName-active')
-    })
-    ringEl.forEach(el => {
-      el.classList.remove('active--ring')
-    })
-    boxAddressEl.style.height = `${heightBoxAddressEl}px`
-    target.classList.add('locName-active')
-    target.querySelector('.ring').classList.add('active--ring')
-
-  }
-  else {
-    boxAddressEl.style.height = null
-    target.classList.remove('locName-active')
-    target.querySelector('.ring').classList.remove('active--ring')
-
-  }
-
-})
 
 
 
@@ -374,6 +297,7 @@ const cardLazyMove = setInterval(function () {
 
     }
   })
+
   startCard++
   if (startCard > 9) {
     cardEl.forEach(el => {
@@ -385,7 +309,7 @@ const cardLazyMove = setInterval(function () {
       if (el.dataset.cardindex >= (4)) {
 
         el.querySelector('.awardLazyMoveTrack__item').classList.add('cardBackface')
-        console.log(el.querySelector('.awardLazyMoveTrack__item'))
+        // console.log(el.querySelector('.awardLazyMoveTrack__item'))
       }
     })
     setTimeout(function () {
@@ -401,4 +325,122 @@ const cardLazyMove = setInterval(function () {
     startCard = 1
   }
 }, 5000)
+
 clearInterval(cardLazyMove) //-
+
+
+
+
+//- Unhide-Email
+
+const parentStaffboxEl = document.querySelector('.tellUsWrapper__right')
+
+
+parentStaffboxEl.addEventListener('click', function (e) {
+  const mailBoxEl = e.target.closest(".email-box")
+  if (!mailBoxEl) return
+  mailBoxEl.querySelector('.email-box--hidden').style.opacity = "0"
+  mailBoxEl.querySelector('.email-box--visible').style.display = "block"
+
+})
+
+
+
+
+//- Slide Circle Bottom
+
+const blogPostBtnEl = document.querySelector('.blogPostBtn--btn')
+const blogPostBoxEl = document.querySelectorAll('.blogPostBox')
+const circleBtnEl = document.querySelectorAll('.circleBtn')
+const readmoreSlideEl = document.querySelectorAll('.readmoreSlide')
+
+blogPostBtnEl.addEventListener('click', function (e) {
+  const targetBtn = e.target.closest('.circleBtn')
+  if (!targetBtn) return
+  circleBtnEl.forEach(el => {
+    el.classList.remove('active--blueBtn')
+  });
+  targetBtn.classList.add('active--blueBtn')
+  blogPostBoxEl.forEach(el => {
+    el.style.transform = `translateX(${-targetBtn.dataset.pageindex * 100}%)`
+
+  })
+  readmoreSlideEl.forEach(el => {
+    el.style.transform = `translateX(${-targetBtn.dataset.pageindex * 100}%)`
+
+  })
+
+})
+
+
+
+//- Map
+
+const parentLocationBox = document.querySelector('.locationBox')
+const cityBoxNameEl = document.querySelectorAll('.cityBox__name')
+const cityBoxAddressBoxEl = document.querySelectorAll('.cityBox__addressBox')
+const ringEl = document.querySelectorAll('.ring')
+
+const mapEl = document.querySelector('.locationMap__map')
+const dataMapEl = document.querySelectorAll('.doubleRing')
+
+
+
+parentLocationBox.addEventListener('click', function (e) {
+  const target = e.target.closest('.cityBox__name')
+  const boxAddressEl = target.nextElementSibling
+
+  const heightBoxAddressEl = boxAddressEl.scrollHeight
+
+  if (boxAddressEl.style.height == 0) {
+    cityBoxAddressBoxEl.forEach(el => {
+      el.style.height = null
+    })
+    cityBoxNameEl.forEach(el => {
+      el.classList.remove('locName-active')
+    })
+    ringEl.forEach(el => {
+      el.classList.remove('active--ring')
+    })
+    boxAddressEl.style.height = `${heightBoxAddressEl}px`
+    target.classList.add('locName-active')
+    target.querySelector('.ring').classList.add('active--ring')
+
+  }
+  else {
+    boxAddressEl.style.height = null
+    target.classList.remove('locName-active')
+    target.querySelector('.ring').classList.remove('active--ring')
+
+  }
+
+  dataMapEl.forEach(el => {
+
+    if (target.dataset.country == el.dataset.country) {
+      el.classList.toggle('active--ring')
+    }
+    else el.classList.remove('active--ring')
+  })
+
+})
+
+
+function crossHoverMap() {
+  ['mouseover', 'mouseout'].forEach(event =>
+    parentLocationBox.addEventListener(event, function (e) {
+      const targetEl = e.target.closest('.cityBox__name')
+      if (!targetEl) return
+      dataMapEl.forEach(el => {
+        // console.log(el.dataset.country)
+        if (targetEl.dataset.country == el.dataset.country) {
+          el.classList.toggle('active')
+        }
+      })
+    })
+  );
+}
+crossHoverMap()
+
+
+
+

@@ -1,11 +1,11 @@
 $color-black-0: #000;
+$color-black-1: #161717;
 $color-white: #fff;
-
+$color-blue-10: #f5f8fa;
 $color-darkBlue-3: #14214e;
 
 $color-blue-5: #2998ff;
 $color-blue-6: #00a3ff;
-$color-blue-10: #ebf7ff;
 
 $color-green-5: #0bbce8;
 $color-green-6: #17edd3;
@@ -17,3 +17,8 @@ $color-green-6: #17edd3;
 // $color-primary-light: #7ed56f;
 // $color-primary-dark: #28b485;
 $font-title: 'Orbitron', sans-serif;
+$font-main: 'Poppins', sans-serif;
+$font-suBmain: 'Montserrat', sans-serif;
+$color-font-main: #1d344a;
+
+$color-gradient-main: linear-gradient(to top right, $color-blue-5, $color-green-5);

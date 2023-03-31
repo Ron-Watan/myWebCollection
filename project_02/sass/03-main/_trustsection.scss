@@ -1,23 +1,24 @@
+//Why trust RDEV
 .trustSection {
   background-color: #f5f8fa;
   padding: 15rem 0 10rem;
+}
+.trustSectionWrapper {
+  display: flex;
+  justify-content: space-between;
 
-  .trustContainer {
-    display: flex;
-  }
   &__left {
-    width: 50%;
-    .wrapper {
-      padding-left: 20rem;
-      padding-bottom: 5rem;
-    }
-    &--img {
-      width: 90%;
+    width: 38%;
+
+    img {
+      width: 100%;
+      opacity: 0.95;
+      padding-top: 2rem;
     }
   }
   &__right {
-    width: 50%;
-    padding: 0 17rem 5rem 5rem;
+    width: 58%;
+    // padding: 0 17rem 5rem 5rem;
   }
 }
 

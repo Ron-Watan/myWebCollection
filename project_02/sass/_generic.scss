@@ -1,3 +1,28 @@
+.container__middle {
+  max-width: 123rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1.5rem 0 1.5rem;
+}
+
+.container__fullLeft {
+  width: 100%;
+  padding-right: 16rem;
+}
+.container__fullRight {
+  width: 100%;
+  padding-left: 16rem;
+  position: relative;
+}
+/////
+.bg-blue-10 {
+  background-color: $color-blue-10;
+}
+.bg-white {
+  background-color: $color-white;
+}
+
+
 //////////////////////
 .font-s-20 {
   font-size: 2rem;
@@ -105,7 +130,7 @@
   }
 }
 
-.border--green {
+.border--blue {
   border: $color-blue-6 2px solid;
   color: $color-blue-6;
   transition: all 0.3s;
@@ -132,12 +157,7 @@
   margin: 0 auto;
   padding: 0 1.5rem 0 1.5rem;
 }
-.container__middle {
-  max-width: 123rem;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 1.5rem 0 1.5rem;
-}
+
 //////////////////////
 
 @keyframes fadeInUp {
@@ -155,7 +175,7 @@
 }
 
 .active {
-  opacity: 1;
+  opacity: 1 !important;
   visibility: visible;
 }
 .hidden {
