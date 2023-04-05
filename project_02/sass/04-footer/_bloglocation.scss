@@ -72,10 +72,14 @@
 .readmoreBox {
   width: 30%;
   display: flex;
-  font-size: 1.2rem;
-  font-weight: 800;
   text-transform: uppercase;
   overflow: hidden;
+  &:hover {
+    transition: all 0.3s;
+
+    transform: scale(1.03);
+
+  }
 }
 .readmoreSlide {
   min-width: 100%;
@@ -159,6 +163,8 @@
 }
 
 .locationMap {
+  display: flex;
+  align-items: start;
   width: 55%;
   position: relative;
   overflow: hidden;
@@ -203,7 +209,7 @@
       border: $color-green-5 1px solid;
       border-radius: 50%;
       transform: translate(-50%, -50%);
-      transition: all .5s;
+      transition: all 0.5s;
       opacity: 0;
       &::after {
         content: '';
@@ -216,8 +222,6 @@
         border: $color-green-5 1px solid;
         border-radius: 50%;
         transform: translate(-50%, -50%);
-
-
       }
     }
     .la {

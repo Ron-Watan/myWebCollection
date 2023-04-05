@@ -74,9 +74,15 @@
   align-items: center;
   gap: 2rem;
 }
+
+.searchBar {
+  display: flex;
+  align-items: center;
+}
 .searchIcon {
-  display: block;
-  width: 2rem;
+  display: inline-block;
+  width: 2.5rem;
+  cursor: pointer;
 }
 
 /////////////

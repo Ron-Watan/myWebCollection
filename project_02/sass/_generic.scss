@@ -22,7 +22,6 @@
   background-color: $color-white;
 }
 
-
 //////////////////////
 .font-s-20 {
   font-size: 2rem;
@@ -176,7 +175,7 @@
 
 .active {
   opacity: 1 !important;
-  visibility: visible;
+  visibility: visible !important;
 }
 .hidden {
   opacity: 0;

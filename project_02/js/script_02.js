@@ -10,7 +10,7 @@ function crossHover(elHover, elTarget, toggleClassName) {
     elTarget.classList.toggle(toggleClassName)
   }));
 }
-crossHover(popUpMenuEl, menuListEl, 'visible')
+crossHover(popUpMenuEl, menuListEl, 'active')
 //////////////////////////////////////////////////////////////////
 const trigger = document.querySelector('.trigger') //at body or main
 const header = document.querySelector('.header')
@@ -111,68 +111,66 @@ barParentEl.addEventListener('click', function (e) {
 
 //- Ron
 
-const heroDevEl = document.querySelector('.heroModule-dev')
+// const heroDevEl = document.querySelector('.heroModule-dev')
 
-function crossHover2(elHover) {
-  ['mouseenter', 'mouseleave'].forEach(event => elHover.addEventListener(event, function () {
-    heroSliderEl.forEach(el => {
-      el.style.transform = `translateY(-300%)`
-    })
-    heroCircleBtnEl.forEach(el => {
-      el.classList.remove('active--blueBtn')
-      el.firstChild.classList.remove('active--ring')
-    });
-
-
-  }));
-
-}
-
-crossHover2(heroDevEl) //-
+// function crossHover2(elHover) {
+//   ['mouseenter', 'mouseleave'].forEach(event => elHover.addEventListener(event, function () {
+//     heroSliderEl.forEach(el => {
+//       el.style.transform = `translateY(-300%)`
+//     })
+//     heroCircleBtnEl.forEach(el => {
+//       el.classList.remove('active--blueBtn')
+//       el.firstChild.classList.remove('active--ring')
+//     });
 
 
+//   }));
+
+// }
+
+// crossHover2(heroDevEl) //-
 
 
 
 
+//- Accordion : Why trust RDEV,
 
-
-
-
-
-
-
-/////////////////////////
 const parentEl = document.querySelector('.partnerContainer')
-const containerInnerEl = document.querySelectorAll('.containerInner')
 const tapContainerEl = document.querySelectorAll('.partnerContainer__slide')
 
-//- Accordion
+// 0) event Delegation
 parentEl.addEventListener('click', function (e) {
   const target = e.target.closest('.partnerContainer__slide')
+  if (!target) return
+
+  // 1) other target want to work with
   const InnerEl = target.querySelector('.containerInner')
   const heightContentP = InnerEl.querySelector('.partnerContainer__paragraph').scrollHeight
+  const accIconV = target.querySelector('.accordionIcon--v')
 
-
+  // 3) if: target set style then other target set back to default
   if (InnerEl.style.height == 0) {
-    containerInnerEl.forEach(el => {
-      el.style.height = null
-    })
     tapContainerEl.forEach(el => {
       el.classList.remove('font--darkGrey')
+      el.querySelector('.containerInner').style.height = null
+      el.querySelector('.accordionIcon--v').style.transform = "rotate(-90deg)"
     })
     InnerEl.style.height = `${heightContentP + 20}px`
     target.classList.add('font--darkGrey')
+    accIconV.style.transform = "rotate(-180deg)";
   }
+  // 4) else: same target set target back to default
   else {
     InnerEl.style.height = null
     target.classList.remove('font--darkGrey')
+    accIconV.style.transform = "rotate(-90deg)";
   }
-
 })
 
 
-///////////////////////////////////
+
+//- Menu List tap : What technologies,
+
 const techListEl = document.querySelector('.techModule__lists')
 const techParagraphEL = document.querySelectorAll('.techModule__right__paragraph')
 document.querySelector('.techModule__item').classList.add('itemHover-white')
@@ -277,20 +275,22 @@ sliceTrackEL.addEventListener('click', function () {
 const cardEl = document.querySelectorAll('.awardLazyMoveTrack__inner')
 
 
-let startCard = 1;
+let startCard = 0;
 const cardLazyMove = setInterval(function () {
   cardEl.forEach(el => {
 
-    el.style.transform = `translateX(${-startCard * 100}%)`
-    if (el.dataset.cardindex == (startCard - 1)) {
+    el.style.transform = `translateX(${-(startCard + 1) * 100}%)`
+    // 1st card [index=0] disappear
+    if (el.dataset.cardindex == (startCard)) {
       el.querySelector('.awardLazyMoveTrack__item').classList.add('cardDisappear')
     }
-    else if (el.dataset.cardindex == (startCard + 3)) {
+    else if (el.dataset.cardindex == (startCard + 5)) {
       el.querySelector('.awardLazyMoveTrack__item').classList.add('cardAppear')
+
       setTimeout(function () {
         el.querySelector('.awardLazyMoveTrack__item').classList.remove('cardBackface')
 
-      }, 1000)
+      }, 500)
 
       // el.querySelector('.awardLazyMoveTrack__item').classList.remove('hidden')
 
@@ -299,14 +299,14 @@ const cardLazyMove = setInterval(function () {
   })
 
   startCard++
-  if (startCard > 9) {
+  if (startCard > 8) {
     cardEl.forEach(el => {
       el.querySelector('.awardLazyMoveTrack__item').classList.remove('cardDisappear')
       el.querySelector('.awardLazyMoveTrack__item').classList.remove('cardAppear')
       el.style.transition = `all 0s`
       el.style.transform = `translateX(0%)`
 
-      if (el.dataset.cardindex >= (4)) {
+      if (el.dataset.cardindex >= (5)) {
 
         el.querySelector('.awardLazyMoveTrack__item').classList.add('cardBackface')
         // console.log(el.querySelector('.awardLazyMoveTrack__item'))
@@ -322,11 +322,34 @@ const cardLazyMove = setInterval(function () {
 
     // cardBackface
 
-    startCard = 1
+    startCard = 0
   }
 }, 5000)
 
 clearInterval(cardLazyMove) //-
+
+
+//- Clinet Moving
+
+const slideItemEl = document.querySelector('.slideTrack')
+
+
+let startItem = 1;
+let widthItem = 43
+const itemLazyMove = setInterval(function () {
+  slideItemEl.style.transform = `translateX(${-(startItem * widthItem)}rem)`
+  slideItemEl.style.transition = "all 2s"
+  startItem++
+  if (startItem == 10) {
+    slideItemEl.style.transition = null
+    slideItemEl.style.transform = null
+    startItem = 1
+  }
+
+}, 5000)
+
+// clearInterval(itemLazyMove) //-
+
 
 
 

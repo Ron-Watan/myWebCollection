@@ -33,10 +33,13 @@
   border-bottom: 1px solid #cdcbcb;
   cursor: pointer;
   transition: all 0.3s;
-  color: #868686;
+  color: $color-grey-5;
 
   &:hover {
     color: #333;
+  }
+  &:hover .accordionIcon {
+    background-color: #333;
   }
 }
 .partnerContainer__title {
@@ -45,6 +48,35 @@
   padding-top: 2.2rem;
   padding-bottom: 2.2rem;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.accordionIcon {
+  position: relative;
+  display: inline-block;
+  width: 2rem;
+  height: 0.2rem;
+  background-color: currentColor;
+  transition: background-color 0.3s;
+  transition: transform 0.3s;
+
+  &--v {
+    position: absolute;
+    content: '';
+    left: 0%;
+    top: 0%;
+    display: inline-block;
+    width: 2rem;
+    height: 0.2rem;
+    background-color: currentColor;
+    transition: transform 0.3s;
+    transform: rotate(-90deg);
+  }
+  // &:hover::before {
+  //   transform: rotate(-180deg);
+  // }
 }
 .containerInner {
   transition: all 1s;

@@ -47,34 +47,31 @@
 //-
 
 @keyframes cardAppear {
-  to {
-    transform: rotateY(0deg);
+  0% {
+    transform: rotateY(-270deg);
   }
-  from {
-    transform: rotateY(90deg);
+  100% {
+    transform: rotateY(-360deg);
   }
 }
 @keyframes cardDisappear {
-  to {
-    transform: rotateY(-90deg);
-    transition: opacity 0.5s;
-    opacity: 1;
-  }
-  from {
+  0% {
     transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(-90deg);
   }
 }
 .cardBackface {
-  transform: rotateY(90deg) !important;
-  backface-visibility: visible;
+  transform: rotateY(-270deg) !important;
+  // backface-visibility: visible;
 }
 
 .cardAppear {
-  animation: cardAppear 2s 0.8s 1 forwards;
-  transition: opacity 2s;
+  animation: cardAppear 2s 0.5s 1 forwards;
 }
 .cardDisappear {
-  animation: cardDisappear 1s 0.8s 1 forwards;
+  animation: cardDisappear 1s 0.5s 1 forwards;
 }
 
 .awardLazyMove {
@@ -84,22 +81,21 @@
 }
 .awardLazyMoveTrack {
   display: flex;
-  padding-left: 3rem;
 
   &__inner {
     perspective: 150rem;
     transition: all 5s;
-    padding: 2rem;
+    padding: 1rem;
   }
 
   &__item {
     margin-top: 5rem;
     margin-bottom: 5rem;
-    width: 24.3rem;
+    // width: 24.3rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 4rem;
+    padding: 4rem 2.5rem;
     box-shadow: 0.2rem 0.2rem 4rem -1rem rgba($color-black-0, 0.15);
     border-radius: 2rem;
     transition: all 1s;
@@ -107,7 +103,7 @@
     .imgBox {
       min-height: 15rem;
       img {
-        max-width: 20rem;
+        max-width: 16rem;
         transition: all 0.3s;
         cursor: pointer;
 

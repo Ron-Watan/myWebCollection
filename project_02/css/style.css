@@ -195,7 +195,7 @@ button {
 
 .active {
   opacity: 1 !important;
-  visibility: visible; }
+  visibility: visible !important; }
 
 .hidden {
   opacity: 0;
@@ -288,9 +288,14 @@ button {
   align-items: center;
   gap: 2rem; }
 
+.searchBar {
+  display: flex;
+  align-items: center; }
+
 .searchIcon {
-  display: block;
-  width: 2rem; }
+  display: inline-block;
+  width: 2.5rem;
+  cursor: pointer; }
 
 .mobile-nav {
   display: none; }
@@ -444,8 +449,7 @@ button {
 .heroModule-dev {
   display: flex;
   gap: 2rem;
-  align-items: center;
-  cursor: pointer; }
+  align-items: center; }
   .heroModule-dev__img {
     width: 5rem;
     border-radius: 50%; }
@@ -558,29 +562,25 @@ button {
     align-self: stretch; }
 
 @keyframes cardAppear {
-  to {
-    transform: rotateY(0deg); }
-  from {
-    transform: rotateY(90deg); } }
+  0% {
+    transform: rotateY(-270deg); }
+  100% {
+    transform: rotateY(-360deg); } }
 
 @keyframes cardDisappear {
-  to {
-    transform: rotateY(-90deg);
-    transition: opacity 0.5s;
-    opacity: 1; }
-  from {
-    transform: rotateY(0deg); } }
+  0% {
+    transform: rotateY(0deg); }
+  100% {
+    transform: rotateY(-90deg); } }
 
 .cardBackface {
-  transform: rotateY(90deg) !important;
-  backface-visibility: visible; }
+  transform: rotateY(-270deg) !important; }
 
 .cardAppear {
-  animation: cardAppear 2s 0.8s 1 forwards;
-  transition: opacity 2s; }
+  animation: cardAppear 2s 0.5s 1 forwards; }
 
 .cardDisappear {
-  animation: cardDisappear 1s 0.8s 1 forwards; }
+  animation: cardDisappear 1s 0.5s 1 forwards; }
 
 .awardLazyMove {
   padding-top: 2rem;
@@ -588,27 +588,25 @@ button {
   overflow: hidden; }
 
 .awardLazyMoveTrack {
-  display: flex;
-  padding-left: 3rem; }
+  display: flex; }
   .awardLazyMoveTrack__inner {
     perspective: 150rem;
     transition: all 5s;
-    padding: 2rem; }
+    padding: 1rem; }
   .awardLazyMoveTrack__item {
     margin-top: 5rem;
     margin-bottom: 5rem;
-    width: 24.3rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 4rem;
+    padding: 4rem 2.5rem;
     box-shadow: 0.2rem 0.2rem 4rem -1rem rgba(0, 0, 0, 0.15);
     border-radius: 2rem;
     transition: all 1s; }
     .awardLazyMoveTrack__item .imgBox {
       min-height: 15rem; }
       .awardLazyMoveTrack__item .imgBox img {
-        max-width: 20rem;
+        max-width: 16rem;
         transition: all 0.3s;
         cursor: pointer; }
         .awardLazyMoveTrack__item .imgBox img:hover {
@@ -646,13 +644,38 @@ button {
   color: #868686; }
   .partnerContainer__slide:hover {
     color: #333; }
+  .partnerContainer__slide:hover .accordionIcon {
+    background-color: #333; }
 
 .partnerContainer__title {
   font-size: 2.2rem;
   font-weight: 700;
   padding-top: 2.2rem;
   padding-bottom: 2.2rem;
-  position: relative; }
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+
+.accordionIcon {
+  position: relative;
+  display: inline-block;
+  width: 2rem;
+  height: 0.2rem;
+  background-color: currentColor;
+  transition: background-color 0.3s;
+  transition: transform 0.3s; }
+  .accordionIcon--v {
+    position: absolute;
+    content: '';
+    left: 0%;
+    top: 0%;
+    display: inline-block;
+    width: 2rem;
+    height: 0.2rem;
+    background-color: currentColor;
+    transition: transform 0.3s;
+    transform: rotate(-90deg); }
 
 .containerInner {
   transition: all 1s;
@@ -1129,49 +1152,62 @@ button {
     align-self: center; }
   .whatClntModule__slideList {
     width: 75%;
-    display: inline-block;
     overflow: hidden; }
 
 .slideTrack {
-  width: 350rem; }
+  display: flex; }
+
+.slideWrapper {
+  padding: 0 1.5rem;
+  min-width: 43rem; }
 
 .slideItem {
-  display: inline-block;
-  width: 40rem;
-  margin-right: 3rem;
-  height: 74rem;
+  display: flex;
+  flex-direction: column;
   background-color: #fff;
-  padding: 1rem 3rem;
+  padding: 2rem 3rem 2rem;
   border-radius: 0.5rem;
-  border: 1px solid #e4e2e2; }
+  border: 1px solid #e4e2e2;
+  color: #838282; }
   .slideItem__featuredIn {
     width: 100%;
-    height: 6.3rem;
     display: flex;
-    justify-content: center; }
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    height: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: #c2bfbf 1px solid;
+    margin-bottom: 2rem; }
     .slideItem__featuredIn span {
       display: inline-block;
       font-size: 1rem;
-      font-weight: 500;
-      color: #838282; }
+      font-weight: 700; }
     .slideItem__featuredIn img {
-      height: 1rem; }
+      display: inline-block;
+      height: 1.5rem; }
   .slideItem__logo {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 14.5rem; }
+    height: 14.5rem;
+    margin-bottom: 1rem; }
     .slideItem__logo img {
       height: 5rem; }
   .slideItem__quotIcon {
     display: flex;
     justify-content: center;
-    align-items: center; }
+    align-items: center;
+    margin-bottom: 6rem; }
+    .slideItem__quotIcon svg {
+      fill: #c2bfbf; }
   .slideItem__content {
     display: flex;
     justify-content: center;
     align-items: start;
-    height: 35.6rem; }
+    text-align: center;
+    height: 35.6rem;
+    margin-bottom: 1rem; }
   .slideItem__person {
     display: flex;
     flex-direction: column;
@@ -1181,7 +1217,13 @@ button {
     height: 18.6rem; }
     .slideItem__person img {
       height: 8rem;
-      border-radius: 50%; }
+      border-radius: 50%;
+      margin-bottom: 1.2rem; }
+    .slideItem__person span:nth-child(2) {
+      color: #1d344a;
+      font-weight: 500; }
+    .slideItem__person span:nth-child(3) {
+      font-size: 1.2rem; }
 
 .serviceOffer {
   padding-top: 8rem;
@@ -1423,10 +1465,11 @@ button {
 .readmoreBox {
   width: 30%;
   display: flex;
-  font-size: 1.2rem;
-  font-weight: 800;
   text-transform: uppercase;
   overflow: hidden; }
+  .readmoreBox:hover {
+    transition: all 0.3s;
+    transform: scale(1.03); }
 
 .readmoreSlide {
   min-width: 100%; }
@@ -1489,6 +1532,8 @@ button {
     margin: 0.5rem 0 2rem; }
 
 .locationMap {
+  display: flex;
+  align-items: start;
   width: 55%;
   position: relative;
   overflow: hidden; }
@@ -1528,7 +1573,7 @@ button {
       border: #0bbce8 1px solid;
       border-radius: 50%;
       transform: translate(-50%, -50%);
-      transition: all .5s;
+      transition: all 0.5s;
       opacity: 0; }
       .locationMap__map .doubleRing::after {
         content: '';
