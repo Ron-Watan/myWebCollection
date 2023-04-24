@@ -1,7 +1,30 @@
-
+// menu popup
 const popUpMenuEl = document.querySelector('.menu__list:first-child')
 const menuListEl = document.querySelector('.menuPopup--wrapper')
 
+// Observer stick Navigation
+const trigger = document.querySelector('.trigger') //at body or main
+const header = document.querySelector('.header')
+
+// Hero circle bottom
+const barParentEl = document.querySelector('.bar')
+const heroSliderEl = document.querySelectorAll('.heroSlider')
+const heroCircleBtnEl = document.querySelectorAll('.circleBtn-hero')
+const heroRingEl = document.querySelectorAll('.hero--ring')
+
+// Accordion : Why trust RDEV,
+const parentEl = document.querySelector('.partnerContainer')
+const tapContainerEl = document.querySelectorAll('.partnerContainer__slide')
+
+// Menu List tap : What technologies,
+const techListEl = document.querySelector('.techModule__lists')
+const techParagraphEL = document.querySelectorAll('.techModule__right__paragraph')
+document.querySelector('.techModule__item').classList.add('itemHover-white')
+
+
+
+///////////////////////////////////////////////
+// CrossHover function
 function crossHover(elHover, elTarget, toggleClassName) {
   ['mouseenter', 'mouseleave'].forEach(event => elHover.addEventListener(event, function () {
     elTarget.classList.toggle(toggleClassName)
@@ -11,35 +34,8 @@ function crossHover(elHover, elTarget, toggleClassName) {
   }));
 }
 crossHover(popUpMenuEl, menuListEl, 'active')
-//////////////////////////////////////////////////////////////////
-const trigger = document.querySelector('.trigger') //at body or main
-const header = document.querySelector('.header')
 
-
-// window.addEventListener('scroll', function () {
-//   header.classList.toggle('secondColor', window.scrollY > 0)
-// })
-
-//- Eperiment:
-
-// const testEl = document.querySelector('.trigger')
-// function obsCallback(entries, observer) {
-//   entries.forEach(entry => {
-//     console.log(entry);
-//   });
-// }
-// const obsOption = {
-//   root: null, // target intersecting
-//   threshold: 0, // Percentage of intersection will be call
-// };
-
-// const observer = new IntersectionObserver(obsCallback, obsOption);
-
-// observer.observe(testEl);
-
-//- End:
-//////////////////////////////////////////////////////////////
-
+// Observer Navigation
 function obsCallbackHeader(entries) {
   const entry = entries[0]; // or [entry]=entries
   if (!entry.isIntersecting) header.classList.add('secondColor');
@@ -53,13 +49,6 @@ const obsOption = {
 const triggerObserver = new IntersectionObserver(obsCallbackHeader, obsOption);
 
 triggerObserver.observe(trigger);
-
-//- Hero circle bottom
-
-const barParentEl = document.querySelector('.bar')
-const heroSliderEl = document.querySelectorAll('.heroSlider')
-const heroCircleBtnEl = document.querySelectorAll('.circleBtn-hero')
-const heroRingEl = document.querySelectorAll('.hero--ring')
 
 
 function autoHeroSlider(numSlide) {
@@ -86,7 +75,7 @@ const loadHeroSlider = setInterval(function () {
   }
 }, 2500)
 
-clearInterval(loadHeroSlider)
+// clearInterval(loadHeroSlider)
 
 barParentEl.addEventListener('click', function (e) {
   const targetBtn = e.target.closest('.circleBtn-hero')
@@ -108,35 +97,7 @@ barParentEl.addEventListener('click', function (e) {
 
 
 
-
-//- Ron
-
-// const heroDevEl = document.querySelector('.heroModule-dev')
-
-// function crossHover2(elHover) {
-//   ['mouseenter', 'mouseleave'].forEach(event => elHover.addEventListener(event, function () {
-//     heroSliderEl.forEach(el => {
-//       el.style.transform = `translateY(-300%)`
-//     })
-//     heroCircleBtnEl.forEach(el => {
-//       el.classList.remove('active--blueBtn')
-//       el.firstChild.classList.remove('active--ring')
-//     });
-
-
-//   }));
-
-// }
-
-// crossHover2(heroDevEl) //-
-
-
-
-
-//- Accordion : Why trust RDEV,
-
-const parentEl = document.querySelector('.partnerContainer')
-const tapContainerEl = document.querySelectorAll('.partnerContainer__slide')
+// Accordion : Why trust RDEV,
 
 // 0) event Delegation
 parentEl.addEventListener('click', function (e) {
@@ -169,12 +130,7 @@ parentEl.addEventListener('click', function (e) {
 
 
 
-//- Menu List tap : What technologies,
-
-const techListEl = document.querySelector('.techModule__lists')
-const techParagraphEL = document.querySelectorAll('.techModule__right__paragraph')
-document.querySelector('.techModule__item').classList.add('itemHover-white')
-// techParagraphEL.classList.add('active')
+// Menu List tap : What technologies,
 
 techListEl.addEventListener('click', function (e) {
   const target = e.target.closest('.techModule__item')
@@ -227,46 +183,6 @@ function sliderTranlateX() {
 sliceTrackEL.addEventListener('click', function () {
   clearInterval(slider)
 })
-
-
-//- Generate Maqqee
-
-
-// const iconBoxoneEl = document.querySelectorAll('.boxone')
-// const iconBoxoneId = document.querySelector('#box0ne')
-
-
-// const lazyMoveTrackEl = document.querySelector('.lazyMoveTrack')
-// const iconListBoxEL = document.querySelector('.iconListBox')
-
-
-// setTimeout(function () {
-//   const iconListBoxELWidth = iconListBoxEL.offsetWidth
-//   lazyMoveTrackEl.style.transform = `translateX(${(iconListBoxELWidth / -2) / 10}rem)`
-// },3000)
-// lazyMoveTrackEl.addEventListener("transitionend", () => {
-//   console.log("Transition ended");
-//   lazyMoveTrackEl.style.transition = null;
-
-// });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// list.removeChild(list.firstElementChild);
-
-
-///////////////////////
 
 
 
@@ -326,7 +242,7 @@ const cardLazyMove = setInterval(function () {
   }
 }, 5000)
 
-clearInterval(cardLazyMove) //-
+// clearInterval(cardLazyMove) //-
 
 
 //- Clinet Moving
@@ -463,7 +379,4 @@ function crossHoverMap() {
   );
 }
 crossHoverMap()
-
-
-
 
