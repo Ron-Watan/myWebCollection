@@ -30,6 +30,9 @@ h1 {
   @include respond(tab-port) {
     font-size: 5rem;
   }
+  @include respond(phone) {
+    font-size: 4.5rem;
+  }
 }
 
 h2 {
