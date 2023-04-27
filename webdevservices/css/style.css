@@ -1768,11 +1768,14 @@ button {
   background-color: #161717;
   padding: 5rem 0 10rem; }
 
-.containerPadLeft {
-  padding-left: 17rem;
+.container-map {
+  max-width: 123rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1.5rem;
   color: #fff; }
   @media (max-width: 900px) {
-    .containerPadLeft {
+    .container-map {
       padding-left: 5rem; } }
 
 .blogLocation {
