@@ -2,8 +2,15 @@
   padding: 5rem 0;
 }
 .footerBottom {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
   gap: 5rem;
+  @include respond(tab-port) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @include respond(phone) {
+    grid-template-columns: 1fr;
+  }
 
   &--title {
     font-size: 1.7rem;
@@ -19,27 +26,45 @@
   }
 
   &__left {
-    width: fit-content;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
   }
+  &__flex {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: 5rem;
+
+  }
   &__middile {
-    width: fit-content;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
     border-left: 1px solid #ddd;
     padding-left: 4rem;
+    @include respond(phone) {
+      border-left: none;
+      padding-left: 0;
+    }
   }
   &__right {
-    width: fit-content;
+
   }
 }
 
 .ftbServiceContnr {
-  display: flex;
-  gap: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  @include respond(desk-nav) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include respond(tab-port) {
+    grid-template-columns: 1fr;
+  }
+  @include respond(phone) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 .ftbserviceBox {
   &__list {
@@ -77,6 +102,7 @@
   width: fit-content;
   color: #999;
   font-weight: 500;
+  white-space: normal !important;
   &:hover {
     color: $color-green-5;
     transition: all 0.3s;
