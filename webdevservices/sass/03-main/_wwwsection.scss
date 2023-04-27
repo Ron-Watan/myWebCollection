@@ -248,7 +248,8 @@
   }
 }
 
-.servOffCard:hover {
+.servOffCard:hover,
+.servOffCard:active {
   background: $color-gradient-main;
   box-shadow: 0 3rem 10rem -1rem #6a77768b;
   border: 0;
@@ -301,7 +302,6 @@
   }
   @include respond(phone) {
     width: 100%;
-
   }
 }
 
@@ -318,7 +318,6 @@
   }
   @include respond(phone) {
     width: 6rem;
-
   }
   img {
     width: 100%;
