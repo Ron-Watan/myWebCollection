@@ -15,7 +15,8 @@ body {
   font-weight: 400;
   line-height: 1.6;
   height: 100%;
-  color: #1d344a; }
+  color: #1d344a;
+  overflow-x: hidden; }
 
 h1 {
   font-size: 6rem;
@@ -426,6 +427,9 @@ button {
 .hero {
   width: 100%;
   height: 42em; }
+  @media (max-width: 900px) {
+    .hero {
+      height: 100%; } }
 
 .trigger {
   display: block; }
@@ -457,6 +461,9 @@ button {
   align-items: center;
   padding-top: 10rem;
   padding-bottom: 5rem; }
+  @media (max-width: 900px) {
+    .heroContainer {
+      flex-direction: column; } }
 
 .heroModule__left {
   display: flex;
@@ -465,6 +472,10 @@ button {
   flex-direction: column;
   justify-content: space-between;
   padding-top: 2rem; }
+  @media (max-width: 900px) {
+    .heroModule__left {
+      width: 100%;
+      margin-left: 10rem; } }
   .heroModule__left__TitleBox h1 {
     font-family: "Orbitron", sans-serif;
     font-weight: 800;
@@ -481,18 +492,9 @@ button {
   display: flex;
   gap: 2rem;
   align-items: center; }
-
-@keyframes autoHeroSlider {
-  0% {
-    transform: translateY(0%); }
-  10% {
-    transform: translateY(-100%); }
-  50% {
-    transform: translateY(-100%); }
-  60% {
-    transform: translateY(-200%); }
-  100% {
-    transform: translateY(-200%); } }
+  @media (max-width: 900px) {
+    .heroBtnControl {
+      margin-top: 5rem; } }
 
 .heroModule__right {
   display: flex;
@@ -502,16 +504,24 @@ button {
   justify-content: space-between;
   padding-top: 3rem;
   color: #fff; }
+  @media (max-width: 900px) {
+    .heroModule__right {
+      width: 100%;
+      margin-left: 10rem; } }
 
 .heroSliderContainer {
   width: 100%;
-  height: 75%;
-  overflow: hidden; }
+  height: 75%; }
 
 .heroSliderTrack {
   display: flex;
   flex-direction: column;
-  height: 100%; }
+  height: 100%;
+  overflow: hidden; }
+  @media (max-width: 900px) {
+    .heroSliderTrack {
+      flex-direction: row;
+      width: 90%; } }
 
 .heroSlider {
   transform: translateY(0%);
@@ -525,11 +535,19 @@ button {
     margin-bottom: 3rem; }
   .heroSlider p {
     font-size: 1.8rem; }
+  @media (max-width: 900px) {
+    .heroSlider {
+      min-width: 100%; } }
 
 .heroModule-dev {
   display: flex;
   gap: 2rem;
   align-items: center; }
+  @media (max-width: 900px) {
+    .heroModule-dev {
+      margin-top: 5rem;
+      justify-content: end;
+      padding-right: 5rem; } }
   .heroModule-dev__img {
     width: 5rem;
     border-radius: 50%; }
@@ -563,18 +581,34 @@ button {
   flex-direction: column;
   align-items: center;
   gap: 1rem; }
+  @media (max-width: 900px) {
+    .bar {
+      flex-direction: row;
+      margin-top: 3rem; } }
   .bar--line {
     width: 0.1rem;
     height: 5rem;
     background-color: #00a3ff; }
+    @media (max-width: 900px) {
+      .bar--line {
+        width: 5rem;
+        height: 0.1rem; } }
   .bar--lineSm {
     width: 0.1rem;
     height: 3rem;
     background-color: #00a3ff; }
+    @media (max-width: 900px) {
+      .bar--lineSm {
+        width: 3rem;
+        height: 0.1rem; } }
   .bar--lineLg {
     width: 0.1rem;
     height: 20rem;
     background-color: #00a3ff; }
+    @media (max-width: 900px) {
+      .bar--lineLg {
+        width: 5rem;
+        height: .1rem; } }
 
 .heroIcon {
   color: #00a3ff;

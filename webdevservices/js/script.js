@@ -74,21 +74,42 @@ const triggerObserver = new IntersectionObserver(obsCallbackHeader, obsOption);
 triggerObserver.observe(trigger);
 
 
+
+let tapPort = window.matchMedia("(max-width: 900px)")
+
 function autoHeroSlider(numSlide) {
-  heroSliderEl.forEach(el => {
-    el.style.transform = `translateY(${-numSlide * 100}%)`
-  })
-  heroRingEl.forEach(el => {
-    el.classList.remove('active--ring')
-  })
-  heroCircleBtnEl.forEach(el => {
-    el.classList.remove('active--blueBtn')
-    if (el.dataset.pageindex == numSlide) {
-      el.classList.add('active--blueBtn')
-      el.firstChild.classList.add('active--ring')
-    }
-  });
+  if (tapPort.matches) { // If media query matches
+    heroSliderEl.forEach(el => {
+      el.style.transform = `translateX(${-numSlide * 100}%)`
+    })
+    heroRingEl.forEach(el => {
+      el.classList.remove('active--ring')
+    })
+    heroCircleBtnEl.forEach(el => {
+      el.classList.remove('active--blueBtn')
+      if (el.dataset.pageindex == numSlide) {
+        el.classList.add('active--blueBtn')
+        el.firstChild.classList.add('active--ring')
+      }
+    });
+  } else {
+    heroSliderEl.forEach(el => {
+      el.style.transform = `translateY(${-numSlide * 100}%)`
+    })
+    heroRingEl.forEach(el => {
+      el.classList.remove('active--ring')
+    })
+    heroCircleBtnEl.forEach(el => {
+      el.classList.remove('active--blueBtn')
+      if (el.dataset.pageindex == numSlide) {
+        el.classList.add('active--blueBtn')
+        el.firstChild.classList.add('active--ring')
+      }
+    });
+  }
+
 }
+
 let page = 0;
 const loadHeroSlider = setInterval(function () {
   autoHeroSlider(page)
@@ -105,17 +126,32 @@ barParentEl.addEventListener('click', function (e) {
   if (!targetBtn) return
   clearInterval(loadHeroSlider)
 
-  heroSliderEl.forEach(el => {
-    el.style.transform = `translateY(${-targetBtn.dataset.pageindex * 100}%)`
 
-  })
-  // Style Botton
-  heroCircleBtnEl.forEach(el => {
-    el.classList.remove('active--blueBtn')
-    el.firstChild.classList.remove('active--ring')
-  });
-  targetBtn.classList.add('active--blueBtn')
-  targetBtn.querySelector('.hero--ring').classList.add('active--ring')
+  if (tapPort.matches) {
+    heroSliderEl.forEach(el => {
+      el.style.transform = `translateX(${-targetBtn.dataset.pageindex * 100}%)`
+
+    })
+    // Style Botton
+    heroCircleBtnEl.forEach(el => {
+      el.classList.remove('active--blueBtn')
+      el.firstChild.classList.remove('active--ring')
+    });
+    targetBtn.classList.add('active--blueBtn')
+    targetBtn.querySelector('.hero--ring').classList.add('active--ring')
+  } else {
+    heroSliderEl.forEach(el => {
+      el.style.transform = `translateY(${-targetBtn.dataset.pageindex * 100}%)`
+
+    })
+    // Style Botton
+    heroCircleBtnEl.forEach(el => {
+      el.classList.remove('active--blueBtn')
+      el.firstChild.classList.remove('active--ring')
+    });
+    targetBtn.classList.add('active--blueBtn')
+    targetBtn.querySelector('.hero--ring').classList.add('active--ring')
+  }
 })
 
 
