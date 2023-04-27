@@ -6,7 +6,6 @@
 .trustSectionWrapper {
   display: flex;
   justify-content: space-between;
-
   &__left {
     width: 38%;
     @include respond(tab-port) {
@@ -57,6 +56,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @include respond(phone) {
+    font-size: 2rem;
+  }
 }
 
 .accordionIcon {
@@ -67,7 +69,9 @@
   background-color: currentColor;
   transition: background-color 0.3s;
   transition: transform 0.3s;
-
+  @include respond(phone) {
+    display: none;
+  }
   &--v {
     position: absolute;
     content: '';
@@ -79,10 +83,10 @@
     background-color: currentColor;
     transition: transform 0.3s;
     transform: rotate(-90deg);
+    @include respond(phone) {
+      display: none;
+    }
   }
-  // &:hover::before {
-  //   transform: rotate(-180deg);
-  // }
 }
 .containerInner {
   transition: all 1s;

@@ -9,6 +9,9 @@
 
 html {
   font-size: 62.5%;
+  @include respond(phone) {
+    font-size: 50%;
+  }
 }
 
 body {
@@ -24,12 +27,18 @@ body {
 h1 {
   font-size: 6rem;
   line-height: 1.2;
+  @include respond(tab-port) {
+    font-size: 5rem;
+  }
 }
 
 h2 {
   font-size: 4rem;
   line-height: 1.2;
   letter-spacing: -0.1rem;
+  @include respond(tab-port) {
+    font-size: 2.5rem !important;
+  }
 }
 
 li,
@@ -56,41 +65,3 @@ button {
   white-space: nowrap;
 }
 //////////////////////
-
-// MEDIA QUERY MANAGER
-/*
-0 - 600px:       phone          Phone 
-600 - 900px:     tab-port       Tablet Portait
-900 - 1200px:    tab-land       Tablet Lanscape
-1200 -1800px:     -             Normal
-1800px +:        desktop-big    Desktop Big
-
-*/
-
-@mixin respond($breakpoint) {
-  @if ($breakpoint==phone) {
-    @media (max-width: 600px) {
-      @content;
-    }
-  }
-  @if ($breakpoint==tab-port) {
-    @media (max-width: 900px) {
-      @content;
-    }
-  }
-  @if ($breakpoint==desk-nav) {
-    @media (max-width: 1115px) {
-      @content;
-    }
-  }
-  @if ($breakpoint==tab-land) {
-    @media (max-width: 1200px) {
-      @content;
-    }
-  }
-  @if ($breakpoint==desk-big) {
-    @media (max-width: 1800px) {
-      @content;
-    }
-  }
-}

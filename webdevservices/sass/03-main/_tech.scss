@@ -8,6 +8,9 @@
   &__wrapper {
     display: flex;
     width: 100%;
+    @include respond(phone) {
+      flex-direction: column;
+    }
   }
   &__left {
     width: 45%;
@@ -16,11 +19,18 @@
     @include respond(tab-port) {
       width: 50%;
     }
+    @include respond(phone) {
+      width: 100%;
+    }
   }
   &__lists {
     width: 74%;
     @include respond(tab-port) {
       width: 90%;
+    }
+    @include respond(phone) {
+      display: flex;
+      width: 100%;
     }
   }
   &__item {
@@ -33,6 +43,11 @@
     transition: all 0.3s;
     cursor: pointer;
     border-radius: 2px;
+
+    @include respond(phone) {
+      flex-direction: column;
+      width: 100%;
+    }
     &:hover {
       background-color: #fff;
       box-shadow: 0 0.2rem 10rem -2rem rgba(0, 0, 0, 0.15);
@@ -42,12 +57,20 @@
       @include respond(tab-port) {
         font-size: 1.6rem;
       }
+      @include respond(phone) {
+        font-size: 1.4rem;
+        width: 100%;
+        text-align: center;
+      }
     }
   }
 
   &__right {
     width: 55%;
     padding-top: 2rem;
+    @include respond(phone) {
+      width: 100%;
+    }
   }
 }
 .itemHover-white {
@@ -70,6 +93,9 @@
   &__card {
     display: flex;
     gap: 4rem;
+    @include respond(phone) {
+      flex-direction: column;
+    }
     .coCard {
       width: 100%;
       padding: 3rem 5rem;
@@ -107,6 +133,7 @@
   gap: 10rem;
   background: linear-gradient(89.84deg, #f5f8fa 0.14%, #f5f8fa 33.2%, rgba(245, 248, 250, 0.78) 51.56%, rgba(0, 0, 0, 0) 99.87%), url('../img/Developement-06.png');
   background-size: cover;
+
   &__left {
     width: 55%;
     @include respond(tab-port) {
@@ -234,8 +261,15 @@
   display: flex;
   width: 100%;
   margin-bottom: 8rem;
+  @include respond(phone) {
+    flex-direction: column;
+  }
   &__image {
     width: 50%;
+    @include respond(phone) {
+      width: 100%;
+      text-align: center;
+    }
     img {
       width: 80%;
     }
@@ -243,6 +277,10 @@
 
   &__info {
     width: 50%;
+    @include respond(phone) {
+      width: 100%;
+      text-align: center;
+    }
   }
   &__text {
     div:first-child {
@@ -255,6 +293,9 @@
     h3 {
       font-size: 3.5rem;
       margin-bottom: 4rem;
+      @include respond(phone) {
+        margin-bottom: 2rem;
+      }
     }
     div:nth-child(3) {
       font-size: 1.8rem;
@@ -266,6 +307,9 @@
       font-size: 1.4rem;
       font-weight: 500;
       margin-bottom: 8rem;
+      @include respond(phone) {
+        margin-bottom: 3rem;
+      }
     }
   }
   &__btnBox {
@@ -311,12 +355,24 @@
   @include respond(tab-port) {
     padding: 3rem;
   }
+  @include respond(phone) {
+    flex-direction: column;
+    transform: translateY(-30%);
+
+  }
   &__left {
     width: 25%;
     text-align: left;
     padding-right: 3rem;
     @include respond(tab-port) {
       width: 50%;
+    }
+    @include respond(phone) {
+      width: 100%;
+      text-align: center;
+      padding-bottom: 2rem;
+      padding-right: 0;
+
     }
     h3 {
       font-size: 3.5rem;
@@ -332,6 +388,12 @@
       gap: 2rem;
       width: 80%;
     }
+    @include respond(phone) {
+      width: 100%;
+      text-align: center;
+      border-top: 1px solid #a4a4a48b;
+      padding-top: 2rem;
+    }
   }
   &__center {
     border-left: 1px solid #a4a4a48b;
@@ -341,6 +403,12 @@
     @include respond(tab-port) {
       width: 100%;
       padding-left: 2rem;
+    }
+    @include respond(phone) {
+      border-left: none;
+      padding-left: 0;
+      text-align: center;
+
     }
   }
   &__right {

@@ -14,6 +14,9 @@
 .logo {
   display: block;
   width: 14rem;
+  @include respond(phone) {
+    width: 10rem;
+  }
 }
 .main-navigation {
   display: flex;

@@ -11,12 +11,19 @@
 }
 .blogLocation {
   display: flex;
+  position: relative;
+  @include respond(phone) {
+    flex-direction: column;
+  }
 }
 
 .blogPost {
   width: 30%;
   padding-right: 5rem;
-
+  @include respond(phone) {
+    width: 100%;
+    margin-bottom: 5rem;
+  }
   h2 {
     font-size: 3.5rem;
     margin-bottom: 3rem;
@@ -180,6 +187,16 @@
   overflow: hidden;
   @include respond(tab-port) {
     transform: translateY(10%);
+  }
+  @include respond(tab-port) {
+    transform: translateY(10%);
+  }
+  @include respond(phone) {
+    position: absolute;
+    right: 0;
+    bottom: 10%;
+    width: 70%;
+
   }
   &::before {
     position: absolute;

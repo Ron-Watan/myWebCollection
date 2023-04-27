@@ -1,3 +1,40 @@
+// MEDIA QUERY MANAGER
+/*
+0 - 600px:       phone          Phone 
+600 - 900px:     tab-port       Tablet Portait
+900 - 1200px:    tab-land       Tablet Lanscape
+1200 -1800px:     -             Normal
+1800px +:        desktop-big    Desktop Big
+
+*/
+@mixin respond($breakpoint) {
+  @if ($breakpoint==phone) {
+    @media (max-width: 450px) {
+      @content;
+    }
+  }
+  @if ($breakpoint==tab-port) {
+    @media (max-width: 900px) {
+      @content;
+    }
+  }
+  @if ($breakpoint==desk-nav) {
+    @media (max-width: 1115px) {
+      @content;
+    }
+  }
+  @if ($breakpoint==tab-land) {
+    @media (max-width: 1200px) {
+      @content;
+    }
+  }
+  @if ($breakpoint==desk-big) {
+    @media (max-width: 1800px) {
+      @content;
+    }
+  }
+}
+
 $color-black-0: #000;
 $color-black-1: #161717;
 $color-white: #fff;

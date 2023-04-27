@@ -6,6 +6,9 @@
   @include respond(tab-port) {
     padding: 0 5rem;
   }
+  @include respond(phone) {
+    padding: 0 2rem;
+  }
 }
 
 .container__fullLeft {
@@ -16,6 +19,9 @@
     margin: 0 auto;
     padding: 0 5rem;
   }
+  @include respond(phone) {
+    padding: 0 2rem;
+  }
 }
 .container__fullRight {
   width: 100%;
@@ -24,6 +30,9 @@
   @include respond(tab-port) {
     margin: 0 auto;
     padding: 0 5rem;
+  }
+  @include respond(phone) {
+    padding: 0 2rem;
   }
 }
 /////
