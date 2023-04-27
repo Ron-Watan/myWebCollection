@@ -184,6 +184,10 @@
   align-items: center;
   justify-content: space-around;
   gap: 3rem;
+
+  @include respond(tab-port) {
+    flex-direction: column;
+  }
 }
 
 .servOffCard {
@@ -202,11 +206,18 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 3rem;
+    @include respond(tab-port) {
+      flex-direction: row;
+      align-items: last baseline;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
     h3 {
       font-size: 2.6rem;
       line-height: 1.3;
     }
     span {
+      display: inline-block;
       text-transform: uppercase;
       font-size: 1.2rem;
       font-weight: 600;
@@ -253,12 +264,19 @@
   flex-direction: column;
   align-items: start;
   gap: 2rem;
+  @include respond(tab-port) {
+    width: 50%;
+  }
 }
 .tellUsWrapper__right {
   width: 70%;
   display: flex;
   padding: 0rem;
   gap: 3rem;
+  @include respond(tab-port) {
+    width: 50%;
+    flex-direction: column;
+  }
 }
 
 .staffBox {
@@ -269,6 +287,9 @@
 }
 .staffBox__img {
   width: 12rem;
+  @include respond(tab-port) {
+    width: 8rem;
+  }
   img {
     width: 100%;
     display: block;
@@ -280,6 +301,9 @@
     font-size: 2.2rem;
     font-weight: 700;
     white-space: nowrap;
+    @include respond(tab-port) {
+      font-size: 2rem;
+    }
   }
   .position {
     text-transform: uppercase;

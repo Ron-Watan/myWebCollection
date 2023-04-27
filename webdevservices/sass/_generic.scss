@@ -2,17 +2,29 @@
   max-width: 123rem;
   width: 100%;
   margin: 0 auto;
-  padding: 0 1.5rem 0 1.5rem;
+  padding: 0 1.5rem;
+  @include respond(tab-port) {
+    padding: 0 5rem;
+  }
 }
 
 .container__fullLeft {
   width: 100%;
   padding-right: 16rem;
+
+  @include respond(tab-port) {
+    margin: 0 auto;
+    padding: 0 5rem;
+  }
 }
 .container__fullRight {
   width: 100%;
   padding-left: 16rem;
   position: relative;
+  @include respond(tab-port) {
+    margin: 0 auto;
+    padding: 0 5rem;
+  }
 }
 /////
 .bg-blue-10 {
@@ -188,7 +200,6 @@
 .activeSlideDown {
   opacity: 1 !important;
   visibility: visible !important;
-
 }
 //////////////////////
 .empty {

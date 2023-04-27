@@ -5,6 +5,9 @@
 .containerPadLeft {
   padding-left: 17rem;
   color: $color-white;
+  @include respond(tab-port) {
+    padding-left: 5rem;
+  }
 }
 .blogLocation {
   display: flex;
@@ -17,6 +20,9 @@
   h2 {
     font-size: 3.5rem;
     margin-bottom: 3rem;
+    @include respond(tab-port) {
+      font-size: 2.5rem;
+    }
   }
 }
 .blogPostPages {
@@ -32,6 +38,9 @@
     font-size: 1.6rem;
     font-weight: 800;
     margin-bottom: 2rem;
+    @include respond(tab-port) {
+      font-size: 1.8rem;
+    }
   }
   &__paragraph {
     font-size: 1.3rem;
@@ -78,7 +87,6 @@
     transition: all 0.3s;
 
     transform: scale(1.03);
-
   }
 }
 .readmoreSlide {
@@ -90,6 +98,9 @@
   h2 {
     font-size: 3.5rem;
     margin-bottom: 3rem;
+    @include respond(tab-port) {
+      font-size: 2.5rem;
+    }
   }
 }
 
@@ -100,7 +111,6 @@
     width: fit-content;
     &__name {
       display: flex;
-      // justify-content: start;
       width: fit-content;
       align-items: center;
       gap: 1rem;
@@ -109,7 +119,7 @@
       font-weight: 600;
       padding: 0.6rem 0;
       cursor: pointer;
-
+      white-space: nowrap;
       &:hover,
       &:focus {
         color: $color-green-5;
@@ -168,6 +178,9 @@
   width: 55%;
   position: relative;
   overflow: hidden;
+  @include respond(tab-port) {
+    transform: translateY(10%);
+  }
   &::before {
     position: absolute;
     content: '';
