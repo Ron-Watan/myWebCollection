@@ -2,6 +2,17 @@
 const popUpMenuEl = document.querySelector('.menu__list:first-child')
 const menuListEl = document.querySelector('.menuPopup--wrapper')
 
+// menu-Mobile popup
+const mobileNavEl = document.querySelector('.mobile-nav')
+const mobileMenuEl = document.querySelector('.mobile-menu')
+
+
+// nav-icon-mobile
+
+const iconTop = document.querySelector('.icon--top')
+const iconMiddle = document.querySelector('.icon--middle')
+const iconBottom = document.querySelector('.icon--bottom')
+
 // Observer stick Navigation
 const trigger = document.querySelector('.trigger') //at body or main
 const header = document.querySelector('.header')
@@ -33,7 +44,19 @@ function crossHover(elHover, elTarget, toggleClassName) {
     elTarget.classList.toggle(toggleClassName)
   }));
 }
+
 crossHover(popUpMenuEl, menuListEl, 'active')
+
+
+// menu-Mobile popup
+mobileNavEl.addEventListener('click', function () {
+  mobileMenuEl.classList.toggle('activeSlideDown')
+  iconTop.classList.toggle('iconTop-transform')
+  iconMiddle.classList.toggle('iconMiddle-transform')
+  iconBottom.classList.toggle('iconBottom-transform')
+})
+
+
 
 // Observer Navigation
 function obsCallbackHeader(entries) {

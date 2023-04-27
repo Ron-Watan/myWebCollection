@@ -35,10 +35,15 @@
     flex-direction: column;
   }
   &__link {
+    font-weight: 500;
     line-height: 1.8;
+    color: $color-font-main;
+    cursor: pointer;
+    &:hover {
+      color: $color-blue-5;
+    }
   }
 }
-
 
 .visible9999 {
   opacity: 1;

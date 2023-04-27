@@ -78,12 +78,17 @@ button {
       @content;
     }
   }
+  @if ($breakpoint==desk-nav) {
+    @media (max-width: 1115px) {
+      @content;
+    }
+  }
   @if ($breakpoint==tab-land) {
     @media (max-width: 1200px) {
       @content;
     }
   }
-  @if ($breakpoint==desktop-big) {
+  @if ($breakpoint==desk-big) {
     @media (max-width: 1800px) {
       @content;
     }

@@ -25,7 +25,95 @@
   display: flex;
   justify-content: space-between;
   align-self: stretch;
+
+  @include respond(desk-nav) {
+    display: none;
+  }
 }
+
+/////////////
+.mobile-nav {
+  display: none;
+  margin-left: auto;
+  padding: 2rem 2rem;
+
+  @include respond(desk-nav) {
+    display: flex;
+    align-items: center;
+  }
+}
+.burgurIcon {
+  position: relative;
+  width: 2.5rem;
+  height: 2.5rem;
+  cursor: pointer;
+
+  .icon {
+    display: inline-block;
+    position: absolute;
+    width: 2.5rem;
+    height: 2px;
+    background-color: #fff;
+    transition: all 0.3s;
+    &--top {
+      left: 0;
+      top: 0.45rem;
+    }
+    &--middle {
+      left: 0;
+      top: 1.15rem;
+    }
+    &--bottom {
+      left: 0;
+      top: 1.85rem;
+    }
+
+
+  }
+}
+
+.iconTop-transform {
+  transform: translateY(0.7rem) rotate(135deg);
+}
+.iconMiddle-transform {
+  transform: translateX(-4rem);
+  opacity: 0;
+}
+.iconBottom-transform {
+  transform: translateY(-0.7rem) rotate(-135deg);
+}
+
+.mobile-menu {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+
+  background-color: #ffffff;
+  transition: all 0.3s;
+  opacity: 0;
+  visibility: hidden;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  &__list {
+    width: 100%;
+    padding: 0.5rem 0;
+    &:not(:last-child) {
+      border-bottom: 1px solid #ddd;
+    }
+  }
+  &__link {
+    width: 100%;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: $color-font-main;
+    &:hover {
+      color: $color-blue-5;
+    }
+  }
+}
+
 .menu {
   display: flex;
 
@@ -83,12 +171,4 @@
   display: inline-block;
   width: 2.5rem;
   cursor: pointer;
-}
-
-/////////////
-.mobile-nav {
-  display: none;
-}
-.burgurIcon {
-  display: none;
 }
