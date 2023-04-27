@@ -1582,20 +1582,29 @@ button {
   .servOffCard__iconBox g {
     transition: all 0.3s; }
 
-.servOffCard:hover,
-.servOffCard:active {
+.servOffCard:hover {
   background: linear-gradient(to top right, #2998ff, #0bbce8);
   box-shadow: 0 3rem 10rem -1rem #6a77768b;
   border: 0;
   transform: translateY(-10%); }
-  .servOffCard:hover span,
-  .servOffCard:active span {
+  .servOffCard:hover span {
     color: #fff; }
-  .servOffCard:hover .link--green,
-  .servOffCard:active .link--green {
+  .servOffCard:hover .link--green {
     color: #fff; }
-  .servOffCard:hover g,
-  .servOffCard:active g {
+  .servOffCard:hover g {
+    stroke: #fff;
+    transition: all 0.3s; }
+
+.servOffCard-Click {
+  background: linear-gradient(to top right, #2998ff, #0bbce8);
+  box-shadow: 0 3rem 10rem -1rem #6a77768b;
+  border: 0;
+  transform: translateY(-10%); }
+  .servOffCard-Click span {
+    color: #fff; }
+  .servOffCard-Click .link--green {
+    color: #fff; }
+  .servOffCard-Click g {
     stroke: #fff;
     transition: all 0.3s; }
 

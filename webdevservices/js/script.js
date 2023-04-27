@@ -213,6 +213,39 @@ techListEl.addEventListener('click', function (e) {
 
 })
 
+const serviceOfferParentEl = document.querySelector('.serviceOffer__cardBox')
+// const servOffCardEl = document.querySelectorAll('.servOffCard')
+
+// servOffCardEl.forEach(el => {
+//   el.addEventListener('click', function () {
+//     el.classList.toggle('servOffCard-Click')
+//   })
+// })
+
+
+serviceOfferParentEl.addEventListener('click', function (e) {
+  const target = e.target.closest('.servOffCard')
+  const itemEl = document.querySelectorAll('.servOffCard')
+
+  itemEl.forEach(el => {
+    el.classList.remove('servOffCard-Click')
+  })
+  target.classList.add('servOffCard-Click')
+
+  // techParagraphEL.forEach(el => {
+  //   if (el.dataset.p === target.dataset.title) {
+  //     el.classList.remove('hidden')
+  //     el.classList.add('fade-in-up')
+  //   } else {
+  //     el.classList.add('hidden')
+  //     el.classList.remove('fade-in-up')
+  //   }
+  // })
+
+
+})
+
+
 //- Slide Track Vertical
 const sliceTrackEL = document.querySelector('.slideTrack')
 const numberSlides = sliceTrackEL.childElementCount
