@@ -33,6 +33,8 @@ const techParagraphEL = document.querySelectorAll('.techModule__right__paragraph
 document.querySelector('.techModule__item').classList.add('itemHover-white')
 
 
+let tapPort = window.matchMedia("(max-width: 900px)")
+let phone = window.matchMedia("(max-width: 600px)")
 
 ///////////////////////////////////////////////
 // CrossHover function
@@ -75,7 +77,7 @@ triggerObserver.observe(trigger);
 
 
 
-let tapPort = window.matchMedia("(max-width: 900px)")
+
 
 function autoHeroSlider(numSlide) {
   if (tapPort.matches) { // If media query matches
@@ -154,6 +156,19 @@ barParentEl.addEventListener('click', function (e) {
   }
 })
 
+//// Drag Hero ////
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // Accordion : Why trust RDEV,
@@ -189,7 +204,7 @@ parentEl.addEventListener('click', function (e) {
 
 
 
-// Menu List tap : What technologies,
+//// Menu List tap : What technologies, ////
 
 techListEl.addEventListener('click', function (e) {
   const target = e.target.closest('.techModule__item')
@@ -229,7 +244,7 @@ serviceOfferParentEl.addEventListener('click', function (e) {
 })
 
 
-//- Slide Track Vertical
+//// Slide Track Vertical ////
 const sliceTrackEL = document.querySelector('.slideTrack')
 const numberSlides = sliceTrackEL.childElementCount
 const itemWidth = 43
@@ -261,7 +276,8 @@ sliceTrackEL.addEventListener('click', function () {
 
 
 
-//- Award Moving
+//// Award Moving ////
+
 const slider = document.querySelector('.awardLazyMoveTrack')
 const cardEl = document.querySelectorAll('.awardLazyMoveTrack__inner')
 
@@ -313,7 +329,7 @@ const cardLazyMove = setInterval(function () {
 }, 5000)
 
 
-//- Drag Slider
+// Drag Slider
 
 let isDragging = false,
   startPos = 0,
@@ -352,7 +368,6 @@ slider.oncontextmenu = function (even) {
 
 
 function touchStart(index) {
-
   return function (even) {
     even.preventDefault()
     if (clickSlider) {

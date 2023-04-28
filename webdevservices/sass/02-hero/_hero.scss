@@ -57,10 +57,6 @@
 
   @include respond(tab-port) {
     width: 100%;
-    margin-left: 10rem;
-  }
-  @include respond(phone) {
-    margin-left: 0rem;
   }
 
   &__TitleBox {
