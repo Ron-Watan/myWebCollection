@@ -154,6 +154,7 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 6rem;
+
     svg {
       fill: #c2bfbf;
     }
@@ -165,6 +166,9 @@
     text-align: center;
     height: 35.6rem;
     margin-bottom: 1rem;
+    @include respond(phone) {
+      height: 25rem;
+    }
   }
   &__person {
     display: flex;

@@ -262,9 +262,8 @@ sliceTrackEL.addEventListener('click', function () {
 
 
 //- Award Moving
-
+const slider = document.querySelector('.awardLazyMoveTrack')
 const cardEl = document.querySelectorAll('.awardLazyMoveTrack__inner')
-
 
 let startCard = 0;
 const cardLazyMove = setInterval(function () {
@@ -282,10 +281,6 @@ const cardLazyMove = setInterval(function () {
         el.querySelector('.awardLazyMoveTrack__item').classList.remove('cardBackface')
 
       }, 500)
-
-      // el.querySelector('.awardLazyMoveTrack__item').classList.remove('hidden')
-
-
     }
   })
 
@@ -317,7 +312,113 @@ const cardLazyMove = setInterval(function () {
   }
 }, 5000)
 
-// clearInterval(cardLazyMove) //-
+
+//- Drag Slider
+
+let isDragging = false,
+  startPos = 0,
+  currentTranslate = 0,
+  prevTranslate = 0,
+  animationID,
+  currentIndex = 0,
+  clickSlider = true
+
+// add our event listeners
+cardEl.forEach((slide, index) => {
+
+  // Disable default image stick dragging
+  slide.addEventListener('dragstart', (e) => e.preventDefault())
+
+  // Touch events
+  slide.addEventListener('touchstart', touchStart(index))
+  slide.addEventListener('touchend', touchEnd)
+  slide.addEventListener('touchmove', touchMove)
+
+  // pointer events
+  slide.addEventListener('mousedown', touchStart(index))
+  slide.addEventListener('mouseup', touchEnd)
+  // slide.addEventListener('mouseleave', touchEnd)
+  slide.addEventListener('mousemove', touchMove)
+
+})
+
+// Diable Context-Menu from Right-Click or Hold on Touch
+slider.oncontextmenu = function (even) {
+  even.preventDefault()
+  even.stopPropagation()
+  return false
+}
+
+
+
+function touchStart(index) {
+
+  return function (even) {
+    even.preventDefault()
+    if (clickSlider) {
+      clearInterval(cardLazyMove)
+      currentTranslate = startCard * 210
+      prevTranslate = currentTranslate
+      slider.style.overflow = `hidden`
+      cardEl.forEach(slide => {
+        slide.classList.add('dragTransition')
+        slide.style.transform = `translateX(0%)`
+        slide.querySelector('.awardLazyMoveTrack__item').classList.add('dragTransition')
+        slide.querySelector('.awardLazyMoveTrack__item').classList.remove('cardDisappear')
+        slide.querySelector('.awardLazyMoveTrack__item').classList.remove('cardAppear')
+        slide.querySelector('.awardLazyMoveTrack__item').classList.remove('cardBackface')
+
+      })
+      clickSlider = false
+    }
+    isDragging = true
+    currentIndex = index
+    startPos = getPositionX(even)
+    animationID = requestAnimationFrame(animation)
+  }
+}
+
+function getPositionX(even) {
+  return even.type.includes('mouse') ? even.clientX : even.touches[0].clientX
+}
+
+function animation() {
+  setSliderPosition()
+  if (isDragging) requestAnimationFrame(animation)
+
+}
+
+function setSliderPosition() {
+  console.log(currentTranslate)
+  if (currentTranslate >= 1680 && currentTranslate > 0) {
+    return currentTranslate = 1680
+  }
+  else if (currentTranslate < 0) {
+    return currentTranslate = 0
+
+  }
+  cardEl.forEach(slide => {
+    slide.style.transform = `translateX(-${currentTranslate * 100 / 210}%)`
+
+  })
+}
+
+
+function touchEnd() {
+  isDragging = false
+  cancelAnimationFrame(animationID)
+  prevTranslate = currentTranslate
+
+}
+
+function touchMove(even) {
+  if (isDragging) {
+    const currentPosition = getPositionX(even)
+    currentTranslate = (prevTranslate + (startPos - currentPosition))
+  }
+}
+
+
 
 
 //- Clinet Moving
@@ -454,4 +555,5 @@ function crossHoverMap() {
   );
 }
 crossHoverMap()
+
 

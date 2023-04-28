@@ -786,7 +786,9 @@ button {
   overflow: hidden; }
 
 .awardLazyMoveTrack {
-  display: flex; }
+  display: flex;
+  cursor: grab;
+  position: relative; }
   .awardLazyMoveTrack__inner {
     perspective: 150rem;
     transition: all 5s;
@@ -794,6 +796,7 @@ button {
   .awardLazyMoveTrack__item {
     margin-top: 5rem;
     margin-bottom: 5rem;
+    height: 28rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -813,6 +816,9 @@ button {
       text-align: center;
       font-size: 1.2rem;
       font-weight: 600; }
+
+.dragTransition {
+  transition: all 0s; }
 
 .trustSection {
   background-color: #f5f8fa;
@@ -1518,6 +1524,9 @@ button {
     text-align: center;
     height: 35.6rem;
     margin-bottom: 1rem; }
+    @media (max-width: 500px) {
+      .slideItem__content {
+        height: 25rem; } }
   .slideItem__person {
     display: flex;
     flex-direction: column;

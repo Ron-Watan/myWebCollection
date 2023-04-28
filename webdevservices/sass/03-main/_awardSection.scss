@@ -113,6 +113,8 @@
 }
 .awardLazyMoveTrack {
   display: flex;
+  cursor: grab;
+  position: relative;
 
   &__inner {
     perspective: 150rem;
@@ -123,7 +125,7 @@
   &__item {
     margin-top: 5rem;
     margin-bottom: 5rem;
-    // width: 24.3rem;
+    height: 28rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -152,4 +154,8 @@
       font-weight: 600;
     }
   }
+}
+
+.dragTransition {
+  transition: all 0s;
 }
