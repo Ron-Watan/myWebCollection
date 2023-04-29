@@ -1708,6 +1708,9 @@ button {
   font-size: 1.3rem;
   font-weight: 600;
   color: #777; }
+  .phoneNo a,
+  .phoneNo a:link {
+    color: #777; }
 
 .lazyMoveContainer {
   position: relative;
