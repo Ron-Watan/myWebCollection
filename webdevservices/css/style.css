@@ -1922,8 +1922,10 @@ button {
   .locationBox .cityBox__addressInner {
     font-size: 1.3rem;
     font-weight: 500;
-    margin: 0.5rem 0 2rem;
-    color: #b7e60f; }
+    margin: 0.5rem 0 2rem; }
+    .locationBox .cityBox__addressInner a,
+    .locationBox .cityBox__addressInner a:link {
+      color: white; }
 
 .locationMap {
   display: flex;
