@@ -545,11 +545,7 @@ button {
   color: #fff; }
   @media (max-width: 900px) {
     .heroModule__right {
-      width: 100%;
-      margin-left: 10rem; } }
-  @media (max-width: 600px) {
-    .heroModule__right {
-      margin-left: 0rem; } }
+      width: 100%; } }
 
 .heroSliderContainer {
   width: 100%;
@@ -559,13 +555,11 @@ button {
   display: flex;
   flex-direction: column;
   height: 100%;
-  overflow: hidden; }
+  overflow: hidden;
+  cursor: grab; }
   @media (max-width: 900px) {
     .heroSliderTrack {
       flex-direction: row;
-      width: 90%; } }
-  @media (max-width: 600px) {
-    .heroSliderTrack {
       width: 100%; } }
 
 .heroSlider {

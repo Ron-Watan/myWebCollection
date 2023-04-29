@@ -17,8 +17,9 @@ const iconBottom = document.querySelector('.icon--bottom')
 const trigger = document.querySelector('.trigger') //at body or main
 const header = document.querySelector('.header')
 
-// Hero circle bottom
+// Hero Slider
 const barParentEl = document.querySelector('.bar')
+const heroSliderTrackEl = document.querySelector('.heroSliderTrack')
 const heroSliderEl = document.querySelectorAll('.heroSlider')
 const heroCircleBtnEl = document.querySelectorAll('.circleBtn-hero')
 const heroRingEl = document.querySelectorAll('.hero--ring')
@@ -50,7 +51,7 @@ function crossHover(elHover, elTarget, toggleClassName) {
 crossHover(popUpMenuEl, menuListEl, 'active')
 
 
-// menu-Mobile popup
+//// menu-Mobile popup ////
 mobileNavEl.addEventListener('click', function () {
   mobileMenuEl.classList.toggle('activeSlideDown')
   iconTop.classList.toggle('iconTop-transform')
@@ -77,7 +78,7 @@ triggerObserver.observe(trigger);
 
 
 
-
+//// Auto Slider - Hero Section ////
 
 function autoHeroSlider(numSlide) {
   if (tapPort.matches) { // If media query matches
@@ -119,9 +120,11 @@ const loadHeroSlider = setInterval(function () {
   if (page == 3) {
     page = 0
   }
+  if (tapPort.matches) {
+    touchHeroDragSlider()
+  }
 }, 2500)
 
-// clearInterval(loadHeroSlider)
 
 barParentEl.addEventListener('click', function (e) {
   const targetBtn = e.target.closest('.circleBtn-hero')
@@ -156,22 +159,9 @@ barParentEl.addEventListener('click', function (e) {
   }
 })
 
-//// Drag Hero ////
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-// Accordion : Why trust RDEV,
+//// Accordion : Why trust RDEV ////
 
 // 0) event Delegation
 parentEl.addEventListener('click', function (e) {
@@ -337,9 +327,12 @@ let isDragging = false,
   prevTranslate = 0,
   animationID,
   currentIndex = 0,
-  clickSlider = true
+  clickSlider = true,
+  maxTrack = 1680,
+  cardWidth = 210
 
 // add our event listeners
+
 cardEl.forEach((slide, index) => {
 
   // Disable default image stick dragging
@@ -357,6 +350,7 @@ cardEl.forEach((slide, index) => {
   slide.addEventListener('mousemove', touchMove)
 
 })
+
 
 // Diable Context-Menu from Right-Click or Hold on Touch
 slider.oncontextmenu = function (even) {
@@ -398,22 +392,21 @@ function getPositionX(even) {
 }
 
 function animation() {
-  setSliderPosition()
+  setSliderPosition(maxTrack, cardWidth)
   if (isDragging) requestAnimationFrame(animation)
 
 }
 
-function setSliderPosition() {
-  console.log(currentTranslate)
-  if (currentTranslate >= 1680 && currentTranslate > 0) {
-    return currentTranslate = 1680
+function setSliderPosition(maxTrack, cardWidth) {
+  if (currentTranslate >= maxTrack && currentTranslate > 0) {
+    return currentTranslate = maxTrack
   }
   else if (currentTranslate < 0) {
     return currentTranslate = 0
 
   }
   cardEl.forEach(slide => {
-    slide.style.transform = `translateX(-${currentTranslate * 100 / 210}%)`
+    slide.style.transform = `translateX(-${currentTranslate * 100 / cardWidth}%)`
 
   })
 }
@@ -432,6 +425,116 @@ function touchMove(even) {
     currentTranslate = (prevTranslate + (startPos - currentPosition))
   }
 }
+
+
+
+
+
+//// Drag Hero //////-
+
+// if (tapPort.matches) { // If media query matches 900px
+//   clearInterval(loadHeroSlider)
+// }
+
+
+let isDraggingHero = false,
+  startPosHero = 0,
+  currentTranslateHero = 0,
+  prevTranslateHero = 0,
+  animationIDHero,
+  currentIndexHero = 0,
+  clickHero = true,
+  windowElWidth = heroSliderEl[0].offsetWidth
+
+// add our event listeners
+
+function touchHeroDragSlider() {
+  heroSliderEl.forEach((slide, index) => {
+
+    // Disable default image stick dragging
+    slide.addEventListener('dragstart', (e) => e.preventDefault())
+
+    // Touch events
+    slide.addEventListener('touchstart', touchStartHero(index))
+    slide.addEventListener('touchend', touchEndHero)
+    slide.addEventListener('touchmove', touchMoveHero)
+
+    // pointer events
+    slide.addEventListener('mousedown', touchStartHero(index))
+    slide.addEventListener('mouseup', touchEndHero)
+    slide.addEventListener('mousemove', touchMoveHero)
+
+  })
+}
+
+heroSliderTrackEl.oncontextmenu = function (even) {
+  even.preventDefault()
+  even.stopPropagation()
+  return false
+}
+
+function touchStartHero(index) {
+  return function (even) {
+
+    even.preventDefault()
+    if (clickHero) {
+      clearInterval(loadHeroSlider)
+      clickHero = false
+      currentTranslateHero = -(index * windowElWidth)
+      autoHeroSlider(index)
+    }
+
+    isDraggingHero = true
+    currentIndexHero = index
+    windowElWidth = heroSliderEl[0].offsetWidth
+    startPosHero = getPositionX(even)
+    animationIDHero = requestAnimationFrame(animationHero)
+
+  }
+
+}
+function animationHero() {
+  setSliderPositionHero()
+  if (isDragging) requestAnimationFrame(animationHero)
+
+}
+function setSliderPositionHero() {
+  heroSliderEl.forEach(slide => {
+    slide.style.transform = `translateX(${currentTranslateHero}px)`
+
+  })
+}
+function touchEndHero() {
+  isDraggingHero = false
+  cancelAnimationFrame(animationIDHero)
+
+  const movedBy = currentTranslateHero - prevTranslateHero // Actual Distance dragging [- Slide left,+ slide Right]
+
+  if (movedBy < -100 && currentIndexHero < heroSliderEl.length - 1) currentIndexHero += 1
+
+  if (movedBy > 100 && currentIndexHero > 0) currentIndexHero -= 1
+  autoHeroSlider(currentIndexHero)
+  setPositionByIndexHero()
+}
+
+function setPositionByIndexHero() {
+  currentTranslateHero = currentIndexHero * -windowElWidth
+  prevTranslateHero = currentTranslateHero
+  setSliderPositionHero()
+}
+
+
+
+function touchMoveHero(even) {
+  if (isDraggingHero) {
+    const currentPosition = getPositionX(even)
+    currentTranslateHero = (prevTranslateHero + (currentPosition - startPosHero)) // Distance Postion on Track + Animation Move track Dragging
+  }
+}
+
+
+
+
 
 
 

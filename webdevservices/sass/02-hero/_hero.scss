@@ -103,10 +103,6 @@
   color: $color-white;
   @include respond(tab-port) {
     width: 100%;
-    margin-left: 10rem;
-  }
-  @include respond(phone) {
-    margin-left: 0rem;
   }
 }
 
@@ -120,11 +116,9 @@
   flex-direction: column;
   height: 100%;
   overflow: hidden;
+  cursor: grab;
   @include respond(tab-port) {
     flex-direction: row;
-    width: 90%;
-  }
-  @include respond(phone) {
     width: 100%;
   }
 }
