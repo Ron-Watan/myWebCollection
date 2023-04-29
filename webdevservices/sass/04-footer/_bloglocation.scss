@@ -197,7 +197,7 @@
   @include respond(phone) {
     position: absolute;
     right: 0;
-    bottom: 10%;
+    top: 40rem;
     width: 70%;
   }
   &::before {
