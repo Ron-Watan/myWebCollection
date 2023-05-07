@@ -8,7 +8,6 @@ const mobileMenuEl = document.querySelector('.mobile-menu')
 
 
 // nav-icon-mobile
-
 const iconTop = document.querySelector('.icon--top')
 const iconMiddle = document.querySelector('.icon--middle')
 const iconBottom = document.querySelector('.icon--bottom')
@@ -33,11 +32,16 @@ const techListEl = document.querySelector('.techModule__lists')
 const techParagraphEL = document.querySelectorAll('.techModule__right__paragraph')
 document.querySelector('.techModule__item').classList.add('itemHover-white')
 
+const serviceOfferParentEl = document.querySelector('.serviceOffer__cardBox')
+
+
+/////////////////////////////////////////////////
 
 let tapPort = window.matchMedia("(max-width: 900px)")
 let phone = window.matchMedia("(max-width: 600px)")
 
 ///////////////////////////////////////////////
+
 // CrossHover function
 function crossHover(elHover, elTarget, toggleClassName) {
   ['mouseenter', 'mouseleave'].forEach(event => elHover.addEventListener(event, function () {
@@ -122,6 +126,7 @@ const loadHeroSlider = setInterval(function () {
   }
   if (tapPort.matches) {
     touchHeroDragSlider()
+
   }
 }, 2500)
 
@@ -218,7 +223,6 @@ techListEl.addEventListener('click', function (e) {
 
 })
 
-const serviceOfferParentEl = document.querySelector('.serviceOffer__cardBox')
 
 
 serviceOfferParentEl.addEventListener('click', function (e) {
@@ -313,7 +317,6 @@ const cardLazyMove = setInterval(function () {
     }, 100)
 
     // cardBackface
-
     startCard = 0
   }
 }, 5000)
@@ -430,12 +433,7 @@ function touchMove(even) {
 
 
 
-//// Drag Hero //////-
-
-// if (tapPort.matches) { // If media query matches 900px
-//   clearInterval(loadHeroSlider)
-// }
-
+//// DRAG - HERO SECTION
 
 let isDraggingHero = false,
   startPosHero = 0,
@@ -491,13 +489,13 @@ function touchStartHero(index) {
     animationIDHero = requestAnimationFrame(animationHero)
 
   }
-
 }
+
 function animationHero() {
   setSliderPositionHero()
   if (isDragging) requestAnimationFrame(animationHero)
-
 }
+
 function setSliderPositionHero() {
   heroSliderEl.forEach(slide => {
     slide.style.transform = `translateX(${currentTranslateHero}px)`
@@ -510,9 +508,9 @@ function touchEndHero() {
 
   const movedBy = currentTranslateHero - prevTranslateHero // Actual Distance dragging [- Slide left,+ slide Right]
 
-  if (movedBy < -100 && currentIndexHero < heroSliderEl.length - 1) currentIndexHero += 1
+  if (movedBy < -30 && currentIndexHero < heroSliderEl.length - 1) currentIndexHero += 1
 
-  if (movedBy > 100 && currentIndexHero > 0) currentIndexHero -= 1
+  if (movedBy > 30 && currentIndexHero > 0) currentIndexHero -= 1
   autoHeroSlider(currentIndexHero)
   setPositionByIndexHero()
 }
@@ -534,12 +532,7 @@ function touchMoveHero(even) {
 
 
 
-
-
-
-
-
-//- Clinet Moving
+/// Clinet Moving
 
 const slideItemEl = document.querySelector('.slideTrack')
 
@@ -558,13 +551,9 @@ const itemLazyMove = setInterval(function () {
 
 }, 5000)
 
-// clearInterval(itemLazyMove) //-
 
 
-
-
-
-//- Unhide-Email
+/// Unhide-Email
 
 const parentStaffboxEl = document.querySelector('.tellUsWrapper__right')
 
@@ -580,7 +569,7 @@ parentStaffboxEl.addEventListener('click', function (e) {
 
 
 
-//- Slide Circle Bottom
+/// Slide Circle Bottom
 
 const blogPostBtnEl = document.querySelector('.blogPostBtn--btn')
 const blogPostBoxEl = document.querySelectorAll('.blogPostBox')
@@ -607,7 +596,7 @@ blogPostBtnEl.addEventListener('click', function (e) {
 
 
 
-//- Map
+/// MINI MAP
 
 const parentLocationBox = document.querySelector('.locationBox')
 const cityBoxNameEl = document.querySelectorAll('.cityBox__name')

@@ -555,12 +555,12 @@ button {
   display: flex;
   flex-direction: column;
   height: 100%;
-  overflow: hidden;
-  cursor: grab; }
+  overflow: hidden; }
   @media (max-width: 900px) {
     .heroSliderTrack {
       flex-direction: row;
-      width: 100%; } }
+      width: 100%;
+      cursor: grab; } }
 
 .heroSlider {
   transform: translateY(0%);

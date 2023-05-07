@@ -116,10 +116,11 @@
   flex-direction: column;
   height: 100%;
   overflow: hidden;
-  cursor: grab;
+
   @include respond(tab-port) {
     flex-direction: row;
     width: 100%;
+    cursor: grab;
   }
 }
 .heroSlider {
